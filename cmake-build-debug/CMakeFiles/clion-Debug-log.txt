@@ -1,0 +1,9 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja -S /Users/denglang/workspace/CppProj/learn_opengl -B /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug
+-- Found OpenGL: /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks/OpenGL.framework   
+CMake Error at CMakeLists.txt:9 (add_subdirectory):
+  add_subdirectory given source "glfw" which is not an existing directory.
+
+
+-- Configuring incomplete, errors occurred!
+See also "/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/CMakeFiles/CMakeOutput.log".
+See also "/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/CMakeFiles/CMakeError.log".

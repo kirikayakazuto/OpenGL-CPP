@@ -1,6 +1,37 @@
-/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -DCMAKE_TOOLCHAIN_FILE=/Users/denglang/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake -G Ninja -S /Users/denglang/workspace/CppProj/learn_opengl -B /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug
+/Applications/CLion.app/Contents/bin/cmake/mac/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=/Users/bytedance/.clion-vcpkg/vcpkg/scripts/buildsystems/vcpkg.cmake -G "CodeBlocks - Unix Makefiles" -S /Users/bytedance/workspace/CppProj/learn_opengl -B /Users/bytedance/workspace/CppProj/learn_opengl/cmake-build-debug
+CMake Deprecation Warning:
+  Support for "Extra Generators" like
+
+    CodeBlocks
+
+  is deprecated and will be removed from a future version of CMake.  IDEs may
+  use the cmake-file-api(7) to view CMake-generated project build trees.
+
+
+CMake Deprecation Warning at /usr/local/lib/cmake/glm/glmConfig.cmake:1 (cmake_minimum_required):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+Call Stack (most recent call first):
+  /Users/bytedance/.clion-vcpkg/vcpkg/scripts/buildsystems/vcpkg.cmake:859 (_find_package)
+  CMakeLists.txt:9 (find_package)
+
+
+CMake Deprecation Warning at /usr/local/lib/cmake/glm/glmConfig.cmake:2 (cmake_policy):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+Call Stack (most recent call first):
+  /Users/bytedance/.clion-vcpkg/vcpkg/scripts/buildsystems/vcpkg.cmake:859 (_find_package)
+  CMakeLists.txt:9 (find_package)
+
+
 -- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
 -- Including Cocoa support
--- Configuring done (0.0s)
--- Generating done (0.0s)
--- Build files have been written to: /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug
+-- Configuring done (0.1s)
+-- Generating done (0.1s)
+-- Build files have been written to: /Users/bytedance/workspace/CppProj/learn_opengl/cmake-build-debug

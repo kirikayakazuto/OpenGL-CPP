@@ -32,7 +32,7 @@ int main() {
 #endif
 
     GLFWwindow* window = glfwCreateWindow(800, 600, "Learn Opengl", NULL, NULL);
-    if(window == NULL) {
+    if(window == nullptr) {
         std::cout << "Failed to create GLFW window" << std::endl;
         return -1;
     }

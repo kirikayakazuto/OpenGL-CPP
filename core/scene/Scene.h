@@ -5,9 +5,11 @@
 #ifndef LEARN_OPENGL_SCENE_H
 #define LEARN_OPENGL_SCENE_H
 
+#include "Node.h"
 
 class Scene {
-
+public:
+    Node* root;
 };
 
 

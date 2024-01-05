@@ -7,6 +7,8 @@
 
 
 class Renderer {
+public:
+    Renderer(int width, int height);
 
 };
 

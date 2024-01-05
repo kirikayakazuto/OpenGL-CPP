@@ -27,3 +27,11 @@ Node *Node::get_child(std::string name) {
 Node *Node::get_child(int index) {
     return this->children[index];
 }
+
+glm::vec3 Node::get_position() {
+    return this->position;
+}
+
+glm::vec3 Node::get_scale() {
+    return this->scale;
+}

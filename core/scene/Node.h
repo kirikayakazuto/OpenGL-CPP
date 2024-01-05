@@ -6,29 +6,30 @@
 #define LEARN_OPENGL_NODE_H
 
 #include <iostream>
-#include <glm/glm.hpp>
 #include <vector>
+#include <glm/glm.hpp>
+
 #include "Mesh.h"
 #include "Material.h"
 
 class Node {
 private:
+    // 位置
+    glm::vec3 position{};
+    // 缩放
+    glm::vec3 scale{};
 
 public:
-    // 位置
-    glm::vec3 position;
-    // 缩放
-    glm::vec3 scale;
     // 父节点
-    Node* parent;
+    Node* parent{};
     // 子节点
     std::vector<Node*> children;
     // 名称
     std::string name;
     // 顶点
-    Mesh* mesh;
+    Mesh* mesh{};
     // 材质
-    Material* material;
+    Material* material{};
 
     Node(std::string name);
 
@@ -40,6 +41,14 @@ public:
 
     // 获取子节点
     Node* get_child(int index);
+
+    glm::vec3 get_position();
+
+    glm::vec3 get_scale();
+
+    void set_position();
+
+    void set_scale();
 
 };
 

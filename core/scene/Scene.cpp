@@ -3,3 +3,43 @@
 //
 
 #include "Scene.h"
+
+
+float vertices[] =
+        { //     COORDINATES     /        COLORS      /   TexCoord  //
+                -0.5f, -0.5f, 0.0f,     1.0f, 0.0f, 0.0f,	0.0f, 0.0f, // Lower left corner
+                -0.5f,  0.5f, 0.0f,     0.0f, 1.0f, 0.0f,	0.0f, 1.0f, // Upper left corner
+                0.5f,  0.5f, 0.0f,     0.0f, 0.0f, 1.0f,	1.0f, 1.0f, // Upper right corner
+                0.5f, -0.5f, 0.0f,     1.0f, 1.0f, 1.0f,	1.0f, 0.0f  // Lower right corner
+        };
+
+// Indices for vertices order
+GLuint indices[] =
+        {
+                0, 2, 1, // Upper triangle
+                0, 3, 2 // Lower triangle
+        };
+
+
+Scene::Scene() {
+
+
+
+    // 初始化mesh
+    std::vector<AttributeFormat> attribute = {{ "a_position", 3 }, { "a_color", 3 }, {"a_uv", 2}};
+    std::vector<float> vertexs = {vertices, vertices + sizeof(vertices) / sizeof(float )};
+    std::vector<GLuint> indexs(indices, indices + sizeof(indices) / sizeof(GLuint));
+    std::unique_ptr<Mesh> mesh(new Mesh(attribute, vertexs, indexs));
+
+    // 初始化shader
+    auto shader = new Shader("./test/shaders/default.vert", "./test/shaders/default.frag");
+    std::unique_ptr<Material> material(new Material(*shader));
+
+    this->root = new Node("Root", *mesh, *material);
+    this->root->SetPosition(glm::vec3(0, 0, 0));
+    this->root->SetScale(glm::vec3(1, 1, 1));
+}
+
+void Scene::Draw() const {
+    this->root->Draw();
+}

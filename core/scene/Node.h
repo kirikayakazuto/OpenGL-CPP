@@ -52,6 +52,8 @@ public:
     void SetMesh(Mesh& _mesh);
 
     void SetMaterial(Material& _material);
+
+    void Draw() const;
 };
 
 

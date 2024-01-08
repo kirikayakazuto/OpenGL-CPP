@@ -3,12 +3,12 @@
 out vec4 FragColor;
 
 in vec3 v_position;
-in vec3 v_normal;
 in vec3 v_color;
 in vec2 v_uv;
 
-uniform sampler2D mainTexture;
+// uniform sampler2D mainTexture;
 
 void main() {
-    FragColor = texture(mainTexture, v_uv);
+    // FragColor = texture(mainTexture, v_uv);
+    FragColor = vec4(1, 0, 0, 0);
 }

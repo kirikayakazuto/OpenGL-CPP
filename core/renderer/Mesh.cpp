@@ -13,9 +13,9 @@ unsigned int GetAttributeNums(std::unique_ptr<std::vector<AttributeFormat>>& att
     return total;
 }
 
-Mesh::Mesh(std::vector<AttributeFormat>& attribute_data, std::vector<Vertex>& v_data, std::vector<GLuint>& i_data)
+Mesh::Mesh(std::vector<AttributeFormat>& attribute_data, std::vector<float>& v_data, std::vector<GLuint>& i_data)
     : attribute_info(std::make_unique<std::vector<AttributeFormat>>(attribute_data)),
-      vertices(std::make_unique<std::vector<Vertex>>(v_data)),
+      vertices(std::make_unique<std::vector<float>>(v_data)),
       indices(std::make_unique<std::vector<GLuint>>(i_data)) {
 
     this->dirty = true;
@@ -59,9 +59,8 @@ void Mesh::Upload() {
     this->dirty = false;
 }
 
-void Mesh::Draw() {
-    glBindVertexArray(this->VAO_ID);
-    glDrawElements(GL_TRIANGLES, this->indices->size(), GL_UNSIGNED_INT, 0);
+GLuint Mesh::GetVaoId() {
+    return this->VAO_ID;
 }
 
 

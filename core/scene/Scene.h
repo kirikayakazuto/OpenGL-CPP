@@ -9,7 +9,10 @@
 
 class Scene {
 public:
-    Node* root;
+    Node* root{};
+    Scene();
+
+    void Draw() const;
 };
 
 

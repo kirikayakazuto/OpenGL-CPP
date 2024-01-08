@@ -49,3 +49,9 @@ void:: Node::SetScale(glm::vec3 val) {
     this->scale = val;
 }
 
+// 渲染
+void Node::Draw() const {
+    glBindVertexArray(this->mesh->GetVaoId());
+    glDrawElements(GL_TRIANGLES, this->mesh->indices->size(), GL_UNSIGNED_INT, 0);
+}
+

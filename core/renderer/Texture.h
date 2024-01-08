@@ -14,7 +14,7 @@
 
 class Texture {
 public:
-    GLuint ID;
+    GLuint ID{};
     const char* type;
     GLuint unit;
 

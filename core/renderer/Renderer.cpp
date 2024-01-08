@@ -63,5 +63,4 @@ void Renderer::main_loop() {
 
 void Renderer::init(int width, int height) {
     this->window = this->create_window(width, height);
-    return;
 }

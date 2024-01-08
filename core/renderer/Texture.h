@@ -7,8 +7,10 @@
 
 // #define STB_IMAGE_IMPLEMENTATION // 只需在一个源文件中定义这个宏
 #include <glad/glad.h>
-#include <stb_image.h>
+#include <FreeImage.h>
+#include <FreeImagePlus.h>
 #include "Shader.h"
+
 
 class Texture {
 public:

@@ -27,10 +27,10 @@ int main() {
     renderer->main_loop();
 
 
-//    std::vector<AttributeFormat> attribute = {{ "a_position", 3 }, { "a_position", 3 }};
-//    std::vector<Vertex> vertexs = {};
-//    std::vector<GLuint> indexs = {};
-//    std::unique_ptr<Mesh> mesh(new Mesh(attribute, vertexs, indexs));
+    std::vector<AttributeFormat> attribute = {{ "a_position", 3 }, { "a_position", 3 }};
+    std::vector<Vertex> vertexs = {};
+    std::vector<GLuint> indexs = {};
+    std::unique_ptr<Mesh> mesh(new Mesh(attribute, vertexs, indexs));
 //
 //    auto shader = new Shader("./test/shaders/default.vert", "./test/shaders/default.frag");
 //    std::unique_ptr<Material> material(new Material(*shader));

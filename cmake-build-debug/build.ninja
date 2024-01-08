@@ -47,56 +47,70 @@ cmake_ninja_workdir = /Users/denglang/workspace/CppProj/learn_opengl/cmake-build
 #############################################
 # Order-only phony target for learn_opengl
 
-build cmake_object_order_depends_target_learn_opengl: phony || cmake_object_order_depends_target_glfw
+build cmake_object_order_depends_target_learn_opengl: phony || CMakeFiles/learn_opengl.dir
 
-build CMakeFiles/learn_opengl.dir/main.cpp.o: CXX_COMPILER__learn_opengl_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/main.cpp || cmake_object_order_depends_target_learn_opengl
-  DEP_FILE = CMakeFiles/learn_opengl.dir/main.cpp.o.d
+build CMakeFiles/learn_opengl.dir/core/renderer/Camera.cpp.o: CXX_COMPILER__learn_opengl_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/core/renderer/Camera.cpp || cmake_object_order_depends_target_learn_opengl
+  DEP_FILE = CMakeFiles/learn_opengl.dir/core/renderer/Camera.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glad/include -F/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks -isystem /Users/denglang/.vcpkg-clion/vcpkg/installed/arm64-osx/include
+  INCLUDES = -F/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks -isystem /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/include
   OBJECT_DIR = CMakeFiles/learn_opengl.dir
-  OBJECT_FILE_DIR = CMakeFiles/learn_opengl.dir
+  OBJECT_FILE_DIR = CMakeFiles/learn_opengl.dir/core/renderer
 
-build CMakeFiles/learn_opengl.dir/libs/glad/src/glad.c.o: C_COMPILER__learn_opengl_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/libs/glad/src/glad.c || cmake_object_order_depends_target_learn_opengl
-  DEP_FILE = CMakeFiles/learn_opengl.dir/libs/glad/src/glad.c.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glad/include -F/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks -isystem /Users/denglang/.vcpkg-clion/vcpkg/installed/arm64-osx/include
+build CMakeFiles/learn_opengl.dir/core/renderer/Material.cpp.o: CXX_COMPILER__learn_opengl_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/core/renderer/Material.cpp || cmake_object_order_depends_target_learn_opengl
+  DEP_FILE = CMakeFiles/learn_opengl.dir/core/renderer/Material.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -F/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks -isystem /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/include
   OBJECT_DIR = CMakeFiles/learn_opengl.dir
-  OBJECT_FILE_DIR = CMakeFiles/learn_opengl.dir/libs/glad/src
+  OBJECT_FILE_DIR = CMakeFiles/learn_opengl.dir/core/renderer
+
+build CMakeFiles/learn_opengl.dir/core/renderer/Mesh.cpp.o: CXX_COMPILER__learn_opengl_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/core/renderer/Mesh.cpp || cmake_object_order_depends_target_learn_opengl
+  DEP_FILE = CMakeFiles/learn_opengl.dir/core/renderer/Mesh.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -F/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks -isystem /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/include
+  OBJECT_DIR = CMakeFiles/learn_opengl.dir
+  OBJECT_FILE_DIR = CMakeFiles/learn_opengl.dir/core/renderer
 
 build CMakeFiles/learn_opengl.dir/core/renderer/Renderer.cpp.o: CXX_COMPILER__learn_opengl_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/core/renderer/Renderer.cpp || cmake_object_order_depends_target_learn_opengl
   DEP_FILE = CMakeFiles/learn_opengl.dir/core/renderer/Renderer.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glad/include -F/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks -isystem /Users/denglang/.vcpkg-clion/vcpkg/installed/arm64-osx/include
+  INCLUDES = -F/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks -isystem /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/include
   OBJECT_DIR = CMakeFiles/learn_opengl.dir
   OBJECT_FILE_DIR = CMakeFiles/learn_opengl.dir/core/renderer
 
-build CMakeFiles/learn_opengl.dir/core/scene/Scene.cpp.o: CXX_COMPILER__learn_opengl_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/core/scene/Scene.cpp || cmake_object_order_depends_target_learn_opengl
-  DEP_FILE = CMakeFiles/learn_opengl.dir/core/scene/Scene.cpp.o.d
+build CMakeFiles/learn_opengl.dir/core/renderer/Shader.cpp.o: CXX_COMPILER__learn_opengl_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/core/renderer/Shader.cpp || cmake_object_order_depends_target_learn_opengl
+  DEP_FILE = CMakeFiles/learn_opengl.dir/core/renderer/Shader.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glad/include -F/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks -isystem /Users/denglang/.vcpkg-clion/vcpkg/installed/arm64-osx/include
+  INCLUDES = -F/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks -isystem /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/include
   OBJECT_DIR = CMakeFiles/learn_opengl.dir
-  OBJECT_FILE_DIR = CMakeFiles/learn_opengl.dir/core/scene
+  OBJECT_FILE_DIR = CMakeFiles/learn_opengl.dir/core/renderer
+
+build CMakeFiles/learn_opengl.dir/core/renderer/Texture.cpp.o: CXX_COMPILER__learn_opengl_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/core/renderer/Texture.cpp || cmake_object_order_depends_target_learn_opengl
+  DEP_FILE = CMakeFiles/learn_opengl.dir/core/renderer/Texture.cpp.o.d
+  FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
+  INCLUDES = -F/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks -isystem /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/include
+  OBJECT_DIR = CMakeFiles/learn_opengl.dir
+  OBJECT_FILE_DIR = CMakeFiles/learn_opengl.dir/core/renderer
 
 build CMakeFiles/learn_opengl.dir/core/scene/Node.cpp.o: CXX_COMPILER__learn_opengl_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/core/scene/Node.cpp || cmake_object_order_depends_target_learn_opengl
   DEP_FILE = CMakeFiles/learn_opengl.dir/core/scene/Node.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glad/include -F/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks -isystem /Users/denglang/.vcpkg-clion/vcpkg/installed/arm64-osx/include
+  INCLUDES = -F/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks -isystem /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/include
   OBJECT_DIR = CMakeFiles/learn_opengl.dir
   OBJECT_FILE_DIR = CMakeFiles/learn_opengl.dir/core/scene
 
-build CMakeFiles/learn_opengl.dir/core/scene/Mesh.cpp.o: CXX_COMPILER__learn_opengl_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/core/scene/Mesh.cpp || cmake_object_order_depends_target_learn_opengl
-  DEP_FILE = CMakeFiles/learn_opengl.dir/core/scene/Mesh.cpp.o.d
+build CMakeFiles/learn_opengl.dir/core/scene/Scene.cpp.o: CXX_COMPILER__learn_opengl_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/core/scene/Scene.cpp || cmake_object_order_depends_target_learn_opengl
+  DEP_FILE = CMakeFiles/learn_opengl.dir/core/scene/Scene.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glad/include -F/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks -isystem /Users/denglang/.vcpkg-clion/vcpkg/installed/arm64-osx/include
+  INCLUDES = -F/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks -isystem /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/include
   OBJECT_DIR = CMakeFiles/learn_opengl.dir
   OBJECT_FILE_DIR = CMakeFiles/learn_opengl.dir/core/scene
 
-build CMakeFiles/learn_opengl.dir/core/scene/Material.cpp.o: CXX_COMPILER__learn_opengl_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/core/scene/Material.cpp || cmake_object_order_depends_target_learn_opengl
-  DEP_FILE = CMakeFiles/learn_opengl.dir/core/scene/Material.cpp.o.d
+build CMakeFiles/learn_opengl.dir/main.cpp.o: CXX_COMPILER__learn_opengl_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/main.cpp || cmake_object_order_depends_target_learn_opengl
+  DEP_FILE = CMakeFiles/learn_opengl.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glad/include -F/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks -isystem /Users/denglang/.vcpkg-clion/vcpkg/installed/arm64-osx/include
+  INCLUDES = -F/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk/System/Library/Frameworks -isystem /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/include
   OBJECT_DIR = CMakeFiles/learn_opengl.dir
-  OBJECT_FILE_DIR = CMakeFiles/learn_opengl.dir/core/scene
+  OBJECT_FILE_DIR = CMakeFiles/learn_opengl.dir
 
 
 # =============================================================================
@@ -106,9 +120,9 @@ build CMakeFiles/learn_opengl.dir/core/scene/Material.cpp.o: CXX_COMPILER__learn
 #############################################
 # Link the executable learn_opengl
 
-build learn_opengl: CXX_EXECUTABLE_LINKER__learn_opengl_Debug CMakeFiles/learn_opengl.dir/main.cpp.o CMakeFiles/learn_opengl.dir/libs/glad/src/glad.c.o CMakeFiles/learn_opengl.dir/core/renderer/Renderer.cpp.o CMakeFiles/learn_opengl.dir/core/scene/Scene.cpp.o CMakeFiles/learn_opengl.dir/core/scene/Node.cpp.o CMakeFiles/learn_opengl.dir/core/scene/Mesh.cpp.o CMakeFiles/learn_opengl.dir/core/scene/Material.cpp.o | libs/glfw/src/libglfw3.a || libs/glfw/src/libglfw3.a
+build learn_opengl: CXX_EXECUTABLE_LINKER__learn_opengl_Debug CMakeFiles/learn_opengl.dir/core/renderer/Camera.cpp.o CMakeFiles/learn_opengl.dir/core/renderer/Material.cpp.o CMakeFiles/learn_opengl.dir/core/renderer/Mesh.cpp.o CMakeFiles/learn_opengl.dir/core/renderer/Renderer.cpp.o CMakeFiles/learn_opengl.dir/core/renderer/Shader.cpp.o CMakeFiles/learn_opengl.dir/core/renderer/Texture.cpp.o CMakeFiles/learn_opengl.dir/core/scene/Node.cpp.o CMakeFiles/learn_opengl.dir/core/scene/Scene.cpp.o CMakeFiles/learn_opengl.dir/main.cpp.o | vcpkg_installed/arm64-osx/debug/lib/libglfw3.a vcpkg_installed/arm64-osx/debug/lib/libglad.a
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
-  LINK_LIBRARIES = libs/glfw/src/libglfw3.a  -Xlinker -framework -Xlinker OpenGL  -Xlinker -framework -Xlinker OpenGL  -framework Cocoa  -framework IOKit  -framework CoreFoundation
+  LINK_LIBRARIES = vcpkg_installed/arm64-osx/debug/lib/libglfw3.a  vcpkg_installed/arm64-osx/debug/lib/libglad.a  -Xlinker -framework -Xlinker OpenGL  -Xlinker -framework -Xlinker OpenGL  -framework Cocoa  -framework IOKit  -framework CoreFoundation
   OBJECT_DIR = CMakeFiles/learn_opengl.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -138,419 +152,8 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
-
-#############################################
-# Utility command for list_install_components
-
-build list_install_components: phony
-
-
-#############################################
-# Utility command for install
-
-build CMakeFiles/install.util: CUSTOM_COMMAND all
-  COMMAND = cd /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -P cmake_install.cmake
-  DESC = Install the project...
-  pool = console
-  restat = 1
-
-build install: phony CMakeFiles/install.util
-
-
-#############################################
-# Utility command for install/local
-
-build CMakeFiles/install/local.util: CUSTOM_COMMAND all
-  COMMAND = cd /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-  DESC = Installing only the local directory...
-  pool = console
-  restat = 1
-
-build install/local: phony CMakeFiles/install/local.util
-
-
-#############################################
-# Utility command for install/strip
-
-build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
-  COMMAND = cd /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-  DESC = Installing the project stripped...
-  pool = console
-  restat = 1
-
-build install/strip: phony CMakeFiles/install/strip.util
-
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# /Users/denglang/workspace/CppProj/learn_opengl/CMakeLists.txt
-# =============================================================================
-
-
-#############################################
-# Utility command for uninstall
-
-build libs/glfw/uninstall: phony libs/glfw/CMakeFiles/uninstall
-
-
-#############################################
-# Utility command for edit_cache
-
-build libs/glfw/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-  DESC = No interactive CMake dialog available...
-  restat = 1
-
-build libs/glfw/edit_cache: phony libs/glfw/CMakeFiles/edit_cache.util
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build libs/glfw/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake --regenerate-during-build -S/Users/denglang/workspace/CppProj/learn_opengl -B/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build libs/glfw/rebuild_cache: phony libs/glfw/CMakeFiles/rebuild_cache.util
-
-
-#############################################
-# Utility command for list_install_components
-
-build libs/glfw/list_install_components: phony
-
-
-#############################################
-# Utility command for install
-
-build libs/glfw/CMakeFiles/install.util: CUSTOM_COMMAND libs/glfw/all
-  COMMAND = cd /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -P cmake_install.cmake
-  DESC = Install the project...
-  pool = console
-  restat = 1
-
-build libs/glfw/install: phony libs/glfw/CMakeFiles/install.util
-
-
-#############################################
-# Utility command for install/local
-
-build libs/glfw/CMakeFiles/install/local.util: CUSTOM_COMMAND libs/glfw/all
-  COMMAND = cd /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-  DESC = Installing only the local directory...
-  pool = console
-  restat = 1
-
-build libs/glfw/install/local: phony libs/glfw/CMakeFiles/install/local.util
-
-
-#############################################
-# Utility command for install/strip
-
-build libs/glfw/CMakeFiles/install/strip.util: CUSTOM_COMMAND libs/glfw/all
-  COMMAND = cd /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-  DESC = Installing the project stripped...
-  pool = console
-  restat = 1
-
-build libs/glfw/install/strip: phony libs/glfw/CMakeFiles/install/strip.util
-
-
-#############################################
-# Custom command for libs/glfw/CMakeFiles/uninstall
-
-build libs/glfw/CMakeFiles/uninstall | ${cmake_ninja_workdir}libs/glfw/CMakeFiles/uninstall: CUSTOM_COMMAND
-  COMMAND = cd /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -P /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/cmake_uninstall.cmake
-
-# =============================================================================
-# Write statements declared in CMakeLists.txt:
-# /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/CMakeLists.txt
-# =============================================================================
-
-# =============================================================================
-# Object build statements for STATIC_LIBRARY target glfw
-
-
-#############################################
-# Order-only phony target for glfw
-
-build cmake_object_order_depends_target_glfw: phony || libs/glfw/src/CMakeFiles/glfw.dir
-
-build libs/glfw/src/CMakeFiles/glfw.dir/context.c.o: C_COMPILER__glfw_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src/context.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_COCOA
-  DEP_FILE = libs/glfw/src/CMakeFiles/glfw.dir/context.c.o.d
-  FLAGS = -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fPIC -fcolor-diagnostics -Wall
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src -I/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src
-  OBJECT_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-
-build libs/glfw/src/CMakeFiles/glfw.dir/init.c.o: C_COMPILER__glfw_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src/init.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_COCOA
-  DEP_FILE = libs/glfw/src/CMakeFiles/glfw.dir/init.c.o.d
-  FLAGS = -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fPIC -fcolor-diagnostics -Wall
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src -I/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src
-  OBJECT_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-
-build libs/glfw/src/CMakeFiles/glfw.dir/input.c.o: C_COMPILER__glfw_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src/input.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_COCOA
-  DEP_FILE = libs/glfw/src/CMakeFiles/glfw.dir/input.c.o.d
-  FLAGS = -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fPIC -fcolor-diagnostics -Wall
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src -I/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src
-  OBJECT_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-
-build libs/glfw/src/CMakeFiles/glfw.dir/monitor.c.o: C_COMPILER__glfw_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src/monitor.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_COCOA
-  DEP_FILE = libs/glfw/src/CMakeFiles/glfw.dir/monitor.c.o.d
-  FLAGS = -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fPIC -fcolor-diagnostics -Wall
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src -I/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src
-  OBJECT_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-
-build libs/glfw/src/CMakeFiles/glfw.dir/platform.c.o: C_COMPILER__glfw_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src/platform.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_COCOA
-  DEP_FILE = libs/glfw/src/CMakeFiles/glfw.dir/platform.c.o.d
-  FLAGS = -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fPIC -fcolor-diagnostics -Wall
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src -I/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src
-  OBJECT_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-
-build libs/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o: C_COMPILER__glfw_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src/vulkan.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_COCOA
-  DEP_FILE = libs/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o.d
-  FLAGS = -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fPIC -fcolor-diagnostics -Wall
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src -I/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src
-  OBJECT_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-
-build libs/glfw/src/CMakeFiles/glfw.dir/window.c.o: C_COMPILER__glfw_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src/window.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_COCOA
-  DEP_FILE = libs/glfw/src/CMakeFiles/glfw.dir/window.c.o.d
-  FLAGS = -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fPIC -fcolor-diagnostics -Wall
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src -I/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src
-  OBJECT_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-
-build libs/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o: C_COMPILER__glfw_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src/egl_context.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_COCOA
-  DEP_FILE = libs/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o.d
-  FLAGS = -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fPIC -fcolor-diagnostics -Wall
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src -I/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src
-  OBJECT_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-
-build libs/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o: C_COMPILER__glfw_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src/osmesa_context.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_COCOA
-  DEP_FILE = libs/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o.d
-  FLAGS = -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fPIC -fcolor-diagnostics -Wall
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src -I/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src
-  OBJECT_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-
-build libs/glfw/src/CMakeFiles/glfw.dir/null_init.c.o: C_COMPILER__glfw_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src/null_init.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_COCOA
-  DEP_FILE = libs/glfw/src/CMakeFiles/glfw.dir/null_init.c.o.d
-  FLAGS = -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fPIC -fcolor-diagnostics -Wall
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src -I/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src
-  OBJECT_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-
-build libs/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o: C_COMPILER__glfw_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src/null_monitor.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_COCOA
-  DEP_FILE = libs/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o.d
-  FLAGS = -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fPIC -fcolor-diagnostics -Wall
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src -I/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src
-  OBJECT_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-
-build libs/glfw/src/CMakeFiles/glfw.dir/null_window.c.o: C_COMPILER__glfw_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src/null_window.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_COCOA
-  DEP_FILE = libs/glfw/src/CMakeFiles/glfw.dir/null_window.c.o.d
-  FLAGS = -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fPIC -fcolor-diagnostics -Wall
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src -I/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src
-  OBJECT_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-
-build libs/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o: C_COMPILER__glfw_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src/null_joystick.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_COCOA
-  DEP_FILE = libs/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o.d
-  FLAGS = -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fPIC -fcolor-diagnostics -Wall
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src -I/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src
-  OBJECT_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-
-build libs/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o: C_COMPILER__glfw_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src/cocoa_time.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_COCOA
-  DEP_FILE = libs/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o.d
-  FLAGS = -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fPIC -fcolor-diagnostics -Wall
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src -I/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src
-  OBJECT_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-
-build libs/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o: C_COMPILER__glfw_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src/posix_module.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_COCOA
-  DEP_FILE = libs/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o.d
-  FLAGS = -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fPIC -fcolor-diagnostics -Wall
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src -I/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src
-  OBJECT_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-
-build libs/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o: C_COMPILER__glfw_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src/posix_thread.c || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_COCOA
-  DEP_FILE = libs/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o.d
-  FLAGS = -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fPIC -fcolor-diagnostics -Wall
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src -I/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src
-  OBJECT_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-
-build libs/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o: C_COMPILER__glfw_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src/cocoa_init.m || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_COCOA
-  DEP_FILE = libs/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o.d
-  FLAGS = -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fPIC -fcolor-diagnostics -Wall
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src -I/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src
-  OBJECT_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-
-build libs/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o: C_COMPILER__glfw_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src/cocoa_joystick.m || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_COCOA
-  DEP_FILE = libs/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o.d
-  FLAGS = -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fPIC -fcolor-diagnostics -Wall
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src -I/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src
-  OBJECT_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-
-build libs/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o: C_COMPILER__glfw_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src/cocoa_monitor.m || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_COCOA
-  DEP_FILE = libs/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o.d
-  FLAGS = -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fPIC -fcolor-diagnostics -Wall
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src -I/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src
-  OBJECT_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-
-build libs/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o: C_COMPILER__glfw_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src/cocoa_window.m || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_COCOA
-  DEP_FILE = libs/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o.d
-  FLAGS = -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fPIC -fcolor-diagnostics -Wall
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src -I/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src
-  OBJECT_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-
-build libs/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o: C_COMPILER__glfw_unscanned_Debug /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src/nsgl_context.m || cmake_object_order_depends_target_glfw
-  DEFINES = -D_GLFW_COCOA
-  DEP_FILE = libs/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o.d
-  FLAGS = -g -std=c99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fPIC -fcolor-diagnostics -Wall
-  INCLUDES = -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/include -I/Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src -I/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src
-  OBJECT_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-  OBJECT_FILE_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target glfw
-
-
-#############################################
-# Link the static library libs/glfw/src/libglfw3.a
-
-build libs/glfw/src/libglfw3.a: C_STATIC_LIBRARY_LINKER__glfw_Debug libs/glfw/src/CMakeFiles/glfw.dir/context.c.o libs/glfw/src/CMakeFiles/glfw.dir/init.c.o libs/glfw/src/CMakeFiles/glfw.dir/input.c.o libs/glfw/src/CMakeFiles/glfw.dir/monitor.c.o libs/glfw/src/CMakeFiles/glfw.dir/platform.c.o libs/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o libs/glfw/src/CMakeFiles/glfw.dir/window.c.o libs/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o libs/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o libs/glfw/src/CMakeFiles/glfw.dir/null_init.c.o libs/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o libs/glfw/src/CMakeFiles/glfw.dir/null_window.c.o libs/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o libs/glfw/src/CMakeFiles/glfw.dir/cocoa_time.c.o libs/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o libs/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o libs/glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o libs/glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o libs/glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o libs/glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o libs/glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o
-  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = libs/glfw/src/CMakeFiles/glfw.dir
-  POST_BUILD = :
-  PRE_LINK = :
-  TARGET_FILE = libs/glfw/src/libglfw3.a
-  TARGET_PDB = glfw3.a.dbg
-
-
-#############################################
-# Utility command for update_mappings
-
-build libs/glfw/src/update_mappings: phony libs/glfw/src/CMakeFiles/update_mappings
-
-
-#############################################
-# Utility command for edit_cache
-
-build libs/glfw/src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-  DESC = No interactive CMake dialog available...
-  restat = 1
-
-build libs/glfw/src/edit_cache: phony libs/glfw/src/CMakeFiles/edit_cache.util
-
-
-#############################################
-# Utility command for rebuild_cache
-
-build libs/glfw/src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake --regenerate-during-build -S/Users/denglang/workspace/CppProj/learn_opengl -B/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug
-  DESC = Running CMake to regenerate build system...
-  pool = console
-  restat = 1
-
-build libs/glfw/src/rebuild_cache: phony libs/glfw/src/CMakeFiles/rebuild_cache.util
-
-
-#############################################
-# Utility command for list_install_components
-
-build libs/glfw/src/list_install_components: phony
-
-
-#############################################
-# Utility command for install
-
-build libs/glfw/src/CMakeFiles/install.util: CUSTOM_COMMAND libs/glfw/src/all
-  COMMAND = cd /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -P cmake_install.cmake
-  DESC = Install the project...
-  pool = console
-  restat = 1
-
-build libs/glfw/src/install: phony libs/glfw/src/CMakeFiles/install.util
-
-
-#############################################
-# Utility command for install/local
-
-build libs/glfw/src/CMakeFiles/install/local.util: CUSTOM_COMMAND libs/glfw/src/all
-  COMMAND = cd /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-  DESC = Installing only the local directory...
-  pool = console
-  restat = 1
-
-build libs/glfw/src/install/local: phony libs/glfw/src/CMakeFiles/install/local.util
-
-
-#############################################
-# Utility command for install/strip
-
-build libs/glfw/src/CMakeFiles/install/strip.util: CUSTOM_COMMAND libs/glfw/src/all
-  COMMAND = cd /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-  DESC = Installing the project stripped...
-  pool = console
-  restat = 1
-
-build libs/glfw/src/install/strip: phony libs/glfw/src/CMakeFiles/install/strip.util
-
-
-#############################################
-# Custom command for libs/glfw/src/CMakeFiles/update_mappings
-
-build libs/glfw/src/CMakeFiles/update_mappings | ${cmake_ninja_workdir}libs/glfw/src/CMakeFiles/update_mappings: CUSTOM_COMMAND
-  COMMAND = cd /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src && /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -P /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/CMake/GenerateMappings.cmake mappings.h.in mappings.h
-  DESC = Updating gamepad mappings from upstream repository
-
 # =============================================================================
 # Target aliases.
-
-build glfw: phony libs/glfw/src/libglfw3.a
-
-build libglfw3.a: phony libs/glfw/src/libglfw3.a
-
-build uninstall: phony libs/glfw/uninstall
-
-build update_mappings: phony libs/glfw/src/update_mappings
 
 # =============================================================================
 # Folder targets.
@@ -560,21 +163,7 @@ build update_mappings: phony libs/glfw/src/update_mappings
 #############################################
 # Folder: /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug
 
-build all: phony learn_opengl libs/glfw/all
-
-# =============================================================================
-
-#############################################
-# Folder: /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw
-
-build libs/glfw/all: phony libs/glfw/src/all
-
-# =============================================================================
-
-#############################################
-# Folder: /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/libs/glfw/src
-
-build libs/glfw/src/all: phony libs/glfw/src/libglfw3.a
+build all: phony learn_opengl
 
 # =============================================================================
 # Built-in targets
@@ -583,14 +172,14 @@ build libs/glfw/src/all: phony libs/glfw/src/libglfw3.a
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindDoxygen.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindOpenGL.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/WriteBasicConfigVersionFile.cmake /Users/denglang/.vcpkg-clion/vcpkg/installed/arm64-osx/share/glm/glm-config.cmake /Users/denglang/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake /Users/denglang/workspace/CppProj/learn_opengl/CMakeLists.txt /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/CMake/cmake_uninstall.cmake.in /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/CMake/glfw3.pc.in /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/CMake/glfw3Config.cmake.in /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/CMakeLists.txt /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src/CMakeLists.txt CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindOpenGL.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake /Users/denglang/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake /Users/denglang/workspace/CppProj/learn_opengl/CMakeLists.txt /Users/denglang/workspace/CppProj/learn_opengl/vcpkg.json CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake vcpkg_installed/arm64-osx/share/glad/gladConfig.cmake vcpkg_installed/arm64-osx/share/glad/gladConfigVersion.cmake vcpkg_installed/arm64-osx/share/glad/gladTargets-debug.cmake vcpkg_installed/arm64-osx/share/glad/gladTargets-release.cmake vcpkg_installed/arm64-osx/share/glad/gladTargets.cmake vcpkg_installed/arm64-osx/share/glfw3/glfw3Config.cmake vcpkg_installed/arm64-osx/share/glfw3/glfw3ConfigVersion.cmake vcpkg_installed/arm64-osx/share/glfw3/glfw3Targets-debug.cmake vcpkg_installed/arm64-osx/share/glfw3/glfw3Targets-release.cmake vcpkg_installed/arm64-osx/share/glfw3/glfw3Targets.cmake vcpkg_installed/arm64-osx/share/glm/glm-config.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/BasicConfigVersion-SameMajorVersion.cmake.in /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakePackageConfigHelpers.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CheckCSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CheckIncludeFile.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CheckLibraryExists.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindDoxygen.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindOpenGL.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindThreads.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/GNUInstallDirs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Internal/CheckSourceCompiles.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/WriteBasicConfigVersionFile.cmake /Users/denglang/.vcpkg-clion/vcpkg/installed/arm64-osx/share/glm/glm-config.cmake /Users/denglang/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake /Users/denglang/workspace/CppProj/learn_opengl/CMakeLists.txt /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/CMake/cmake_uninstall.cmake.in /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/CMake/glfw3.pc.in /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/CMake/glfw3Config.cmake.in /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/CMakeLists.txt /Users/denglang/workspace/CppProj/learn_opengl/libs/glfw/src/CMakeLists.txt CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake: phony
+build /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeDependentOption.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindOpenGL.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindPackageHandleStandardArgs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/FindPackageMessage.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-C.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/Platform/UnixPaths.cmake /Users/denglang/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake /Users/denglang/workspace/CppProj/learn_opengl/CMakeLists.txt /Users/denglang/workspace/CppProj/learn_opengl/vcpkg.json CMakeCache.txt CMakeFiles/3.27.8/CMakeCCompiler.cmake CMakeFiles/3.27.8/CMakeCXXCompiler.cmake CMakeFiles/3.27.8/CMakeSystem.cmake vcpkg_installed/arm64-osx/share/glad/gladConfig.cmake vcpkg_installed/arm64-osx/share/glad/gladConfigVersion.cmake vcpkg_installed/arm64-osx/share/glad/gladTargets-debug.cmake vcpkg_installed/arm64-osx/share/glad/gladTargets-release.cmake vcpkg_installed/arm64-osx/share/glad/gladTargets.cmake vcpkg_installed/arm64-osx/share/glfw3/glfw3Config.cmake vcpkg_installed/arm64-osx/share/glfw3/glfw3ConfigVersion.cmake vcpkg_installed/arm64-osx/share/glfw3/glfw3Targets-debug.cmake vcpkg_installed/arm64-osx/share/glfw3/glfw3Targets-release.cmake vcpkg_installed/arm64-osx/share/glfw3/glfw3Targets.cmake vcpkg_installed/arm64-osx/share/glm/glm-config.cmake: phony
 
 
 #############################################

@@ -8,9 +8,8 @@
 #include <iostream>
 #include <vector>
 #include <glm/glm.hpp>
-
-#include "Mesh.h"
-#include "Material.h"
+#include "../renderer/Mesh.h"
+#include "../renderer/Material.h"
 
 class Node {
 private:
@@ -25,31 +24,34 @@ public:
     // 子节点
     std::vector<Node*> children;
     // 名称
-    std::string name;
+    std::string nodeName;
     // 顶点
-    Mesh* mesh{};
+    std::unique_ptr<Mesh> mesh;
     // 材质
-    Material* material{};
+    std::unique_ptr<Material> material;
 
-    Node(std::string name);
+    Node(std::string nodeName, Mesh& mesh, Material& material);
 
     // 添加子节点
-    Node* add_child(Node* node);
+    Node* AddChild(Node* node);
 
     // 获取子节点
-    Node* get_child(std::string name);
+    Node* GetChild(std::string nodeName);
 
     // 获取子节点
-    Node* get_child(int index);
+    Node* GetChild(int index);
 
-    glm::vec3 get_position();
+    glm::vec3 GetPosition();
 
-    glm::vec3 get_scale();
+    glm::vec3 GetScale();
 
-    void set_position();
+    void SetPosition(glm::vec3 val);
 
-    void set_scale();
+    void SetScale(glm::vec3 val);
 
+    void SetMesh(Mesh& _mesh);
+
+    void SetMaterial(Material& _material);
 };
 
 

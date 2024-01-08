@@ -10,9 +10,6 @@ find_package(glfw3 CONFIG REQUIRED)
 find_package(freeimage CONFIG REQUIRED)
 
 
-message("===  include_directories ${Stb_INCLUDE_DIR}")
-message("=== CMAKE_CURRENT_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}")
-
 file(GLOB_RECURSE SOURCE_FILES main.cpp "core/*.cpp" "core/*.h")
 add_executable(${CMAKE_PROJECT_NAME} ${SOURCE_FILES})
 

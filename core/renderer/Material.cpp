@@ -4,8 +4,8 @@
 
 #include "Material.h"
 
-Material::Material(Shader& _shader):
-    shader(std::make_unique<Shader>(_shader)),
+Material::Material(Shader* _shader):
+    shader(_shader),
     textureMap(std::make_unique<std::unordered_map<std::string , Texture&>>()) {
 
 }

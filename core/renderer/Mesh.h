@@ -11,6 +11,7 @@
 #include <glm/glm.hpp>
 #include <memory>
 #include <GLFW/glfw3.h>
+#include <iostream>
 
 
 struct AttributeFormat {
@@ -31,13 +32,13 @@ private:
     bool dirty;
 
     GLuint VAO_ID;
-    GLuint VBO_ID;
-    GLuint EBO_ID;
+    GLuint VBO_ID{};
+    GLuint EBO_ID{};
 
 public:
-    std::unique_ptr<std::vector<float>> vertices;
-    std::unique_ptr<std::vector<GLuint>> indices;
-    std::unique_ptr<std::vector<AttributeFormat>> attribute_info;
+    std::vector<float> vertices;
+    std::vector<GLuint> indices;
+    std::vector<AttributeFormat> attribute_info;
 
     Mesh(std::vector<AttributeFormat>& attribute_data, std::vector<float>& v_data, std::vector<GLuint>& i_data);
 

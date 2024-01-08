@@ -12,7 +12,7 @@
 class Material {
 public:
 
-    std::unique_ptr<Shader> shader;
+    Shader* shader;
 
     std::unique_ptr<std::unordered_map<std::string , Texture&>> textureMap;
 
@@ -20,7 +20,7 @@ public:
 
     std::unique_ptr<std::unordered_map<std::string, std::variant<int, double>>> uniformMap;
 
-    Material(Shader& shader);
+    Material(Shader* shader);
 
     void SetTexture(std::string textureName, Texture& texture);
 };

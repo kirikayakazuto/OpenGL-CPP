@@ -7,22 +7,26 @@
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include "../scene/Scene.h"
 
 class Renderer {
 private:
     GLFWwindow* window;
+
 public:
     Renderer();
 
-    void init(int width, int height);
+    void Init(int width, int height);
 
-    GLFWwindow* create_window(int width, int height);
+    GLFWwindow* CreateWindow(int width, int height);
 
     static void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 
-    void process_input();
+    void ProcessInput();
 
-    void main_loop();
+    void MainLoop(Scene* scene);
+
+    void Draw(Scene* scene);
 
 };
 

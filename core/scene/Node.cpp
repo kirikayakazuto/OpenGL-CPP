@@ -6,10 +6,10 @@
 
 #include <utility>
 
-Node::Node(std::string _nodeName, Mesh& _mesh, Material& _material):
+Node::Node(std::string _nodeName, Mesh* _mesh, Material* _material):
     nodeName(std::move(_nodeName)),
-    mesh(&_mesh),
-    material(&_material) {
+    mesh(_mesh),
+    material(_material) {
 
     this->position = glm::vec3(0, 0, 0);
     this->scale = glm::vec3(1, 1, 1);
@@ -52,6 +52,9 @@ void:: Node::SetScale(glm::vec3 val) {
 // 渲染
 void Node::Draw() const {
     glBindVertexArray(this->mesh->GetVaoId());
-    glDrawElements(GL_TRIANGLES, this->mesh->indices->size(), GL_UNSIGNED_INT, 0);
+    this->material->shader->Activate();
+    glDrawElements(GL_TRIANGLES, this->mesh->indices.size(), GL_UNSIGNED_INT, 0);
+    // std::cout << "3" << this->mesh->indices.size() << std::endl;
+
 }
 

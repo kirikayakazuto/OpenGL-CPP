@@ -9,7 +9,7 @@ Renderer::Renderer() {
 
 }
 
-GLFWwindow *Renderer::create_window(int width, int height) {
+GLFWwindow *Renderer::CreateWindow(int width, int height) {
     // 初始化glfw
     glfwInit();
 
@@ -41,18 +41,24 @@ void Renderer::framebuffer_size_callback(GLFWwindow *window, int width, int heig
     glViewport(0, 0, width, height);
 }
 
-void Renderer::process_input() {
+void Renderer::ProcessInput() {
     if(glfwGetKey(this->window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
         glfwSetWindowShouldClose(this->window, true);
     }
 }
 
-void Renderer::main_loop() {
+void Renderer::Init(int width, int height) {
+    this->window = this->CreateWindow(width, height);
+}
+
+void Renderer::MainLoop(Scene* scene) {
     while (!glfwWindowShouldClose(this->window)) {
-        this->process_input();
+        this->ProcessInput();
 
         glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
+
+        this->Draw(scene);
 
         glfwPollEvents();
         glfwSwapBuffers(this->window);
@@ -61,6 +67,7 @@ void Renderer::main_loop() {
     glfwTerminate();
 }
 
-void Renderer::init(int width, int height) {
-    this->window = this->create_window(width, height);
+
+void Renderer::Draw(Scene* scene) {
+    scene->Draw();
 }

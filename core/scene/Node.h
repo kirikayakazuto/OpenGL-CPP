@@ -26,11 +26,11 @@ public:
     // 名称
     std::string nodeName;
     // 顶点
-    std::unique_ptr<Mesh> mesh;
+    Mesh* mesh;
     // 材质
-    std::unique_ptr<Material> material;
+    Material* material;
 
-    Node(std::string nodeName, Mesh& mesh, Material& material);
+    Node(std::string nodeName, Mesh* mesh, Material* material);
 
     // 添加子节点
     Node* AddChild(Node* node);

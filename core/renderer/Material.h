@@ -14,15 +14,17 @@ public:
 
     Shader* shader;
 
-    std::unique_ptr<std::unordered_map<std::string , Texture&>> textureMap;
+    std::unordered_map<std::string , Texture*> textureMap;
 
-    std::unique_ptr<std::unordered_map<std::string , double>> doubleMap;
+    std::unordered_map<std::string , double> doubleMap;
 
-    std::unique_ptr<std::unordered_map<std::string, std::variant<int, double>>> uniformMap;
+    std::unordered_map<std::string, std::variant<int, double>> uniformMap;
 
     Material(Shader* shader);
 
-    void SetTexture(std::string textureName, Texture& texture);
+    void SetTexture(std::string textureName, Texture *texture);
+
+    void ActiveTextures();
 };
 
 

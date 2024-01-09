@@ -53,6 +53,7 @@ void:: Node::SetScale(glm::vec3 val) {
 void Node::Draw() const {
     glBindVertexArray(this->mesh->GetVaoId());
     this->material->shader->Activate();
+    this->material->ActiveTextures();
     glDrawElements(GL_TRIANGLES, this->mesh->indices.size(), GL_UNSIGNED_INT, 0);
     // std::cout << "3" << this->mesh->indices.size() << std::endl;
 

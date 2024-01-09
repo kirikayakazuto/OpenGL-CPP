@@ -31,11 +31,11 @@ Scene::Scene() {
     auto mesh = new Mesh(attribute, vertexs, indexs);
 
     // 初始化shader
-    auto shader = new Shader(
-            "/Users/denglang/workspace/CppProj/learn_opengl/test/shaders/default.vert",
-            "/Users/denglang/workspace/CppProj/learn_opengl/test/shaders/default.frag"
-            );
+    auto shader = new Shader("core/scene/shaders/default.vert","core/scene/shaders/default.frag");
     auto material = new Material(shader);
+
+    auto texture = new Texture("assets/pop_cat.png", 0);
+    material->SetTexture("mainTexture", texture);
 
     this->root = new Node("Root", mesh, material);
     this->root->SetPosition(glm::vec3(0, 0, 0));

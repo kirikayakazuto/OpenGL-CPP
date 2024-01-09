@@ -4,8 +4,7 @@
 
 #include "Texture.h"
 
-Texture::Texture(const char *image, const char *texType, GLuint slot) {
-    this->type = texType;
+Texture::Texture(const char *image, GLuint slot) {
     FreeImage_Initialise();
 
     FIBITMAP* imageBitmap = nullptr;
@@ -20,7 +19,8 @@ Texture::Texture(const char *image, const char *texType, GLuint slot) {
     if (imageBitmap) {
         auto widthImg = FreeImage_GetWidth(imageBitmap);
         auto heightImg = FreeImage_GetHeight(imageBitmap);
-        BYTE* bytes = FreeImage_GetBits(imageBitmap);
+        std::cout << widthImg << heightImg << std::endl;
+        unsigned char* bytes = FreeImage_GetBits(imageBitmap);
 
         glGenTextures(1, &this->ID);
         glActiveTexture(GL_TEXTURE0 + slot);
@@ -29,7 +29,6 @@ Texture::Texture(const char *image, const char *texType, GLuint slot) {
 
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST_MIPMAP_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 

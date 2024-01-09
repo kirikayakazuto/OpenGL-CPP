@@ -5,7 +5,7 @@
 #include "Texture.h"
 
 Texture::Texture(const char *image, GLuint slot) {
-    FreeImage_Initialise();
+     FreeImage_Initialise();
 
     FIBITMAP* imageBitmap = nullptr;
     FREE_IMAGE_FORMAT imageFormat = FreeImage_GetFileType(image, 0);
@@ -19,8 +19,10 @@ Texture::Texture(const char *image, GLuint slot) {
     if (imageBitmap) {
         auto widthImg = FreeImage_GetWidth(imageBitmap);
         auto heightImg = FreeImage_GetHeight(imageBitmap);
-        std::cout << widthImg << heightImg << std::endl;
-        unsigned char* bytes = FreeImage_GetBits(imageBitmap);
+        auto bpp = FreeImage_GetBPP(imageBitmap); // 获取每个像素的位数（比特数）
+        std::cout << widthImg << " X " << heightImg << std::endl;
+
+        GLubyte* bytes = FreeImage_GetBits(imageBitmap);
 
         glGenTextures(1, &this->ID);
         glActiveTexture(GL_TEXTURE0 + slot);
@@ -33,16 +35,17 @@ Texture::Texture(const char *image, GLuint slot) {
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
         GLenum format = FreeImage_GetBPP(imageBitmap) == 32 ? GL_RGBA : GL_RGB;
-        glTexImage2D(GL_TEXTURE_2D, 0, format, widthImg, heightImg, 0, format, GL_UNSIGNED_BYTE, bytes);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, widthImg, heightImg, 0, GL_BGRA, GL_UNSIGNED_BYTE, (void*)bytes);
+        glGenerateMipmap(GL_TEXTURE_2D);
 
         FreeImage_Unload(imageBitmap);
     }
 
-    FreeImage_DeInitialise();
+     FreeImage_DeInitialise();
     glBindTexture(GL_TEXTURE_2D, 0);
 }
 
-void Texture::Bind() {
+void Texture::Bind() const {
     glActiveTexture(GL_TEXTURE0 + this->unit);
     glBindTexture(GL_TEXTURE_2D, this->ID);
 }

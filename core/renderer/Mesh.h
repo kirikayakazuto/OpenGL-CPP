@@ -31,7 +31,7 @@ class Mesh {
 private:
     bool dirty;
 
-    GLuint VAO_ID;
+    GLuint VAO_ID{};
     GLuint VBO_ID{};
     GLuint EBO_ID{};
 

@@ -55,7 +55,5 @@ void Node::Draw() const {
     this->material->shader->Activate();
     this->material->ActiveTextures();
     glDrawElements(GL_TRIANGLES, this->mesh->indices.size(), GL_UNSIGNED_INT, 0);
-    // std::cout << "3" << this->mesh->indices.size() << std::endl;
-
 }
 

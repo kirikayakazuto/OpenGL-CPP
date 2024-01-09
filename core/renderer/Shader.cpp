@@ -29,6 +29,7 @@ Shader::Shader(const char *vertexFile, const char *fragmentFile) {
 
     glDeleteShader(vertShader);
     glDeleteShader(fragShader);
+
 }
 
 std::string Shader::GetFileContent(const char *filename) {

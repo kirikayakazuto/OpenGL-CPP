@@ -20,8 +20,8 @@ public:
     Texture(const char* image, GLuint slot);
 
     // void texUnit(Shader& shader, const char* uniform, GLuint unit);
-    void Bind();
-    void Unbind();
+    void Bind() const;
+    static void Unbind();
     void Delete();
 };
 

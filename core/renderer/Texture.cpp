@@ -19,7 +19,6 @@ Texture::Texture(const char *image, GLuint slot) {
     if (imageBitmap) {
         auto widthImg = FreeImage_GetWidth(imageBitmap);
         auto heightImg = FreeImage_GetHeight(imageBitmap);
-        auto bpp = FreeImage_GetBPP(imageBitmap); // 获取每个像素的位数（比特数）
         std::cout << widthImg << " X " << heightImg << std::endl;
 
         GLubyte* bytes = FreeImage_GetBits(imageBitmap);

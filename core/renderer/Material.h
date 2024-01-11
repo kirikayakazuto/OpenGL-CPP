@@ -8,6 +8,7 @@
 #include "Shader.h"
 #include "Texture.h"
 #include <unordered_map>
+#include <glm/glm.hpp>
 
 class Material {
 public:
@@ -23,6 +24,10 @@ public:
     Material(Shader* shader);
 
     void SetTexture(std::string textureName, Texture *texture);
+
+    void SetUniformMat(std::string uniformName, glm::mat4 mat);
+
+    void SetUniformFloat(std::string uniformName, float val);
 
     void ActiveTextures();
 };

@@ -6,13 +6,18 @@
 #define LEARN_OPENGL_SCENE_H
 
 #include "Node.h"
+#include "../renderer/Camera.h"
 
 class Scene {
 public:
     Node* root{};
-    Scene();
+    Camera* camera;
+
+    Scene(int width, int height);
 
     void Draw() const;
+
+    void OnUpdate(double dt);
 };
 
 

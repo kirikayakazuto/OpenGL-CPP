@@ -21,9 +21,9 @@ GLuint indices[] =
         };
 
 
-Scene::Scene() {
+Scene::Scene(int width, int height) {
+    this->camera = new Camera(width, height, glm::vec3(0.0f, 0.0f, 2.0f), 45.0f, 0.1f, 100.0f);
     // 初始化mesh
-
     std::vector<AttributeFormat> attribute = {{ "a_position", 3 }, { "a_color", 3 }, {"a_uv", 2}};
 
     std::vector<float> vertexs = {vertices, vertices + sizeof(vertices) / sizeof(float )};
@@ -44,4 +44,10 @@ Scene::Scene() {
 
 void Scene::Draw() const {
     this->root->Draw();
+}
+
+void Scene::OnUpdate(double dt) {
+    this->camera->OnInput();
+    this->camera->UpdateMatrix();
+    this->root->material->SetTexture()
 }

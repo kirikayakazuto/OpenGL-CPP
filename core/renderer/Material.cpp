@@ -17,8 +17,12 @@ void Material::SetTexture(std::string textureName, Texture *texture) {
 
 void Material::ActiveTextures() {
     for (const auto &item: this->textureMap) {
-        item.second->Bind();
         auto texUni = glGetUniformLocation(this->shader->ID, item.first.c_str());
         glUniform1i(texUni, item.second->unit);
+        item.second->Bind();
     }
+}
+
+void Material::SetUniformMat(std::string uniformName, glm::mat4 mat) {
+
 }

@@ -58,6 +58,9 @@ void Renderer::MainLoop(Scene* scene) {
         glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
 
+        // 更新逻辑
+        this->Update(scene);
+        // 更新渲染
         this->Draw(scene);
 
         glfwPollEvents();
@@ -68,6 +71,17 @@ void Renderer::MainLoop(Scene* scene) {
 }
 
 
+void Renderer::Update(Scene *scene) {
+    scene->OnUpdate(0);
+}
+
 void Renderer::Draw(Scene* scene) {
     scene->Draw();
+}
+
+Renderer* Renderer::GetInstance() {
+    if(Renderer::instance == nullptr) {
+        Renderer::instance = new Renderer();
+    }
+    return Renderer::instance;
 }

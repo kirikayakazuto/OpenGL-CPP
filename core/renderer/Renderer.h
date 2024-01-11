@@ -11,9 +11,13 @@
 
 class Renderer {
 private:
+    static Renderer* instance;
+public:
+
+    static Renderer* GetInstance();
+
     GLFWwindow* window;
 
-public:
     Renderer();
 
     void Init(int width, int height);
@@ -27,6 +31,8 @@ public:
     void MainLoop(Scene* scene);
 
     void Draw(Scene* scene);
+
+    void Update(Scene* scene);
 
 };
 

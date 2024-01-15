@@ -8,6 +8,7 @@
 #include <iostream>
 #include <vector>
 #include <glm/glm.hpp>
+#include "../components/BaseComponent.h"
 #include "../renderer/Mesh.h"
 #include "../renderer/Material.h"
 
@@ -18,6 +19,8 @@ private:
     // 缩放
     glm::vec3 scale{};
 
+    glm::vec3 rotation{};
+
 public:
     // 父节点
     Node* parent{};
@@ -25,10 +28,8 @@ public:
     std::vector<Node*> children;
     // 名称
     std::string nodeName;
-    // 顶点
-    Mesh* mesh;
-    // 材质
-    Material* material;
+
+    Component
 
     Node(std::string nodeName, Mesh* mesh, Material* material);
 

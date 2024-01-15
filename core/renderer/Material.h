@@ -16,12 +16,11 @@
 
 class Material {
 private:
-    Shader* shader;
-
     std::unordered_map<std::string, Texture*> textureMap;
     std::unordered_map<std::string, double> doubleMap;
     std::unordered_map<std::string, const float*> matMap;
 public:
+    Shader* shader;
 
     Material(Shader* shader);
 

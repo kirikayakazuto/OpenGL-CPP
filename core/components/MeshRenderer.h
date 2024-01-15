@@ -3,17 +3,18 @@
 // 渲染组件, 提供渲染能力
 //
 
-#ifndef LEARN_OPENGL_RENDERCOMPONENT_H
-#define LEARN_OPENGL_RENDERCOMPONENT_H
+#ifndef LEARN_OPENGL_MESHRENDERER_H
+#define LEARN_OPENGL_MESHRENDERER_H
 
+#include "BaseComponent.h"
 #include "../renderer/Mesh.h"
 #include "../renderer/Material.h"
 
-class RenderComponent {
+class MeshRenderer: public BaseComponent{
 public:
     Mesh* mesh;
     Material* material;
 };
 
 
-#endif //LEARN_OPENGL_RENDERCOMPONENT_H
+#endif //LEARN_OPENGL_MESHRENDERER_H

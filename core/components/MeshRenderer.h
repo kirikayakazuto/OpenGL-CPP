@@ -6,11 +6,11 @@
 #ifndef LEARN_OPENGL_MESHRENDERER_H
 #define LEARN_OPENGL_MESHRENDERER_H
 
-#include "BaseComponent.h"
+#include "Component.h"
 #include "../renderer/Mesh.h"
 #include "../renderer/Material.h"
 
-class MeshRenderer: public BaseComponent{
+class MeshRenderer: public Component{
 public:
     Mesh* mesh;
     Material* material;

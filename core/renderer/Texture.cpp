@@ -20,7 +20,7 @@ Texture::Texture(const std::string& url, GLuint slot) {
     if (imageBitmap) {
         auto widthImg = FreeImage_GetWidth(imageBitmap);
         auto heightImg = FreeImage_GetHeight(imageBitmap);
-        std::cout << widthImg << " X " << heightImg << std::endl;
+        std::cout << widthImg << " x " << heightImg << std::endl;
 
         GLubyte* bytes = FreeImage_GetBits(imageBitmap);
 

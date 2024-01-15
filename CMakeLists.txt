@@ -11,9 +11,7 @@ find_package(freeimage CONFIG REQUIRED)
 
 
 file(GLOB_RECURSE SOURCE_FILES main.cpp "core/*.cpp" "core/*.h")
-add_executable(${CMAKE_PROJECT_NAME} ${SOURCE_FILES}
-        core/materials/TextureMaterial.cpp
-        core/materials/TextureMaterial.h)
+add_executable(${CMAKE_PROJECT_NAME} ${SOURCE_FILES})
 
 
 target_link_libraries(${CMAKE_PROJECT_NAME} freeimage::FreeImage freeimage::FreeImagePlus glm::glm glfw glad::glad ${OPENGL_LIBRARY})

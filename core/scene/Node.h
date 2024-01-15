@@ -8,9 +8,7 @@
 #include <iostream>
 #include <vector>
 #include <glm/glm.hpp>
-#include "../components/BaseComponent.h"
-#include "../renderer/Mesh.h"
-#include "../renderer/Material.h"
+#include "../components/Component.h"
 
 class Node {
 private:
@@ -20,7 +18,6 @@ private:
     glm::vec3 scale{};
 
     glm::vec3 rotation{};
-
 public:
     // 父节点
     Node* parent{};
@@ -29,16 +26,13 @@ public:
     // 名称
     std::string nodeName;
 
-    Component
-
-    Node(std::string nodeName, Mesh* mesh, Material* material);
-
+    Node(std::string nodeName);
+    // 组件
+    std::vector<Component*> components;
     // 添加子节点
     Node* AddChild(Node* node);
-
     // 获取子节点
     Node* GetChild(const std::string& key);
-
     // 获取子节点
     Node* GetChild(int index);
 
@@ -49,6 +43,13 @@ public:
     void SetPosition(glm::vec3 val);
 
     void SetScale(glm::vec3 val);
+
+    template <class T_Component>
+    T_Component* AddComponent();
+
+    template <class T_Component>
+    T_Component* GetComponent();
+
 };
 
 

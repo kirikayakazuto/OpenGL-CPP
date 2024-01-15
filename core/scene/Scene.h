@@ -7,6 +7,9 @@
 
 #include "Node.h"
 #include "../renderer/Camera.h"
+#include "../components/MeshRenderer.h"
+#include "../components/Plane.h"
+#include "../materials/TextureMaterial.h"
 
 class Scene {
 private:

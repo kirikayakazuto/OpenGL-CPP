@@ -23,7 +23,6 @@ void Plane::SetMaterial(Material *m) {
 }
 
 Plane::Plane() : MeshRenderer() {
-    // 初始化mesh
     std::vector<AttributeFormat> attribute = {{ "a_position", 3 }, { "a_color", 3 }, {"a_uv", 2}};
     std::vector<float> vertice = {vertices, vertices + sizeof(vertices) / sizeof(float)};
     std::vector<GLuint> index(indices, indices + sizeof(indices) / sizeof(GLuint));

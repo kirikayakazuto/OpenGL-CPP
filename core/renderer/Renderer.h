@@ -16,7 +16,7 @@ private:
     std::time_t nowTime{};
 public:
 
-    GLFWwindow* window;
+    GLFWwindow* window{};
 
     Renderer();
 

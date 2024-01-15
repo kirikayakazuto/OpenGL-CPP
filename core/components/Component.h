@@ -2,11 +2,10 @@
 // Created by Bytedance on 2024/1/15.
 //
 
-#ifndef LEARN_OPENGL_BASECOMPONENT_H
-#define LEARN_OPENGL_BASECOMPONENT_H
+#ifndef LEARN_OPENGL_COMPONENT_H
+#define LEARN_OPENGL_COMPONENT_H
 
-
-class BaseComponent {
+class Component {
 public:
     bool enable;
     void OnEnable();
@@ -15,4 +14,4 @@ public:
 };
 
 
-#endif //LEARN_OPENGL_BASECOMPONENT_H
+#endif //LEARN_OPENGL_COMPONENT_H

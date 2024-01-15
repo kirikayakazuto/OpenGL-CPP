@@ -2,7 +2,7 @@
 -- Running vcpkg install
 Detecting compiler hash for triplet arm64-osx...
 All requested packages are currently installed.
-Total install time: 84 ns
+Total install time: 208 ns
 freeimage provides CMake targets:
 
   # this is heuristically generated, and may not be correct
@@ -33,6 +33,6 @@ glm provides CMake targets:
   target_link_libraries(main PRIVATE glm::glm)
 
 -- Running vcpkg install - done
--- Configuring done (4.0s)
+-- Configuring done (4.7s)
 -- Generating done (0.0s)
 -- Build files have been written to: /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug

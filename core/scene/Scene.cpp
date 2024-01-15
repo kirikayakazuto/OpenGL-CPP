@@ -36,24 +36,15 @@ Material* CreateSpriteMaterial(const std::string& url) {
 Scene::Scene(int width, int height, GLFWwindow* window) {
     this->window = window;
     this->camera = new Camera(width, height, glm::vec3(0.0f, 0.0f, 2.0f), 45.0f, 0.1f, 100.0f);
-    // 初始化mesh
-    std::vector<AttributeFormat> attribute = {{ "a_position", 3 }, { "a_color", 3 }, {"a_uv", 2}};
 
-    std::vector<float> vertexs = {vertices, vertices + sizeof(vertices) / sizeof(float)};
-    std::vector<GLuint> indexs(indices, indices + sizeof(indices) / sizeof(GLuint));
-    auto mesh = new Mesh(attribute, vertexs, indexs);
+    this->root = new Node("Root");
+    auto plane = this->root->AddComponent<Plane>();
+    plane->SetMaterial(new TextureMaterial("assets/pop_cat.png"));
 
-    // 初始化shader
-    auto shader = new Shader("core/scene/shaders/default.vert","core/scene/shaders/default.frag");
-    auto material = new Material(shader);
+    auto com = this->root->GetComponent<Plane>();
 
-    auto texture = new Texture("assets/pop_cat.png", 0);
-    material->SetTexture("mainTexture", texture);
-
-    this->root = new Node("Root", mesh, material);
     this->root->SetPosition(glm::vec3(0, 0, 0));
     this->root->SetScale(glm::vec3(1, 1, 1));
-
 }
 
 void WalkTree(Node* node, std::vector<Node*>& nodes) {
@@ -69,10 +60,11 @@ void Scene::Draw() const {
     WalkTree(this->root, nodes);
 
     for (const auto &item: nodes) {
-        glBindVertexArray(item->mesh->GetVaoId());
-        item->material->SetUniformMat("u_cameraMatrix", glm::value_ptr(this->camera->projection * this->camera->view));
-        item->material->Activate();
-        glDrawElements(GL_TRIANGLES, item->mesh->indices.size(), GL_UNSIGNED_INT, 0);
+        auto meshRenderer = item->GetComponent<MeshRenderer>();
+        glBindVertexArray(meshRenderer->mesh->GetVaoId());
+        meshRenderer->material->SetUniformMat("u_cameraMatrix", glm::value_ptr(this->camera->projection * this->camera->view));
+        meshRenderer->material->Activate();
+        glDrawElements(GL_TRIANGLES, meshRenderer->mesh->indices.size(), GL_UNSIGNED_INT, 0);
     }
 }
 

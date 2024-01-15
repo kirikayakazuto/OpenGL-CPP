@@ -6,10 +6,7 @@
 
 #include <utility>
 
-Node::Node(std::string _nodeName, Mesh* _mesh, Material* _material):
-    nodeName(std::move(_nodeName)),
-    mesh(_mesh),
-    material(_material) {
+Node::Node(std::string _nodeName): nodeName(std::move(_nodeName)) {
 
     this->position = glm::vec3(0, 0, 0);
     this->scale = glm::vec3(1, 1, 1);
@@ -56,6 +53,29 @@ void Node::SetPosition(glm::vec3 val) {
 void:: Node::SetScale(glm::vec3 val) {
     this->scale = val;
 }
+
+template<class T_Component>
+T_Component *Node::GetComponent() {
+    for (const auto &item: this->components) {
+        if(dynamic_cast<T_Component>(item)) {
+            return item;
+        }
+    }
+    return nullptr;
+}
+
+template <class T_Component>
+T_Component* Node::AddComponent() {
+    static_assert(std::is_base_of<Component, T_Component>::value, "T must bt subclass of Component");
+    auto com = T_Component();
+    this->components.push_back(com);
+    return com;
+}
+//
+//template <class T_Component>
+//Component* Node::GetComponent() {
+//
+//}
 
 
 

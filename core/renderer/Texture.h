@@ -9,7 +9,7 @@
 #include <glad/glad.h>
 #include <FreeImage.h>
 #include <FreeImagePlus.h>
-#include "Shader.h"
+#include <iostream>
 
 
 class Texture {

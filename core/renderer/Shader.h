@@ -6,10 +6,10 @@
 #define LEARN_OPENGL_SHADER_H
 
 #include <glad/glad.h>
-#include<string>
+#include <string>
 #include <fstream>
 #include <sstream>
-#include<iostream>
+#include <iostream>
 
 class Shader {
 private:

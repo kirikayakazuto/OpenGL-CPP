@@ -15,11 +15,10 @@ uniform mat4 u_cameraMatrix;
 //
 void main() {
 	v_position = a_position;
-
 	v_color = a_color;
 	v_uv = a_uv;
 
 	// Outputs the positions/coordinates of all vertices
-	// gl_Position = u_cameraMatrix * vec4(v_position, 1.0);
-	gl_Position = vec4(v_position, 1.0);
+	gl_Position = u_cameraMatrix * vec4(v_position, 1.0);
+	// gl_Position = vec4(v_position, 1.0);
 }

@@ -5,10 +5,10 @@
 
 int main() {
     // 初始化 renderer
-    auto renderer = Renderer::GetInstance();
+    auto renderer = new Renderer();
     renderer->Init(800, 600);
 
-    auto scene = new Scene(800, 600);
+    auto scene = new Scene(800, 600, renderer->window);
     renderer->MainLoop(scene);
 
     // std::cout << "do draw" << std::endl;

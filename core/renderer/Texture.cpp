@@ -4,7 +4,8 @@
 
 #include "Texture.h"
 
-Texture::Texture(const char *image, GLuint slot) {
+Texture::Texture(const std::string& url, GLuint slot) {
+    auto image = url.c_str();
      FreeImage_Initialise();
 
     FIBITMAP* imageBitmap = nullptr;

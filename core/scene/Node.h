@@ -36,7 +36,7 @@ public:
     Node* AddChild(Node* node);
 
     // 获取子节点
-    Node* GetChild(std::string nodeName);
+    Node* GetChild(const std::string& key);
 
     // 获取子节点
     Node* GetChild(int index);
@@ -48,12 +48,6 @@ public:
     void SetPosition(glm::vec3 val);
 
     void SetScale(glm::vec3 val);
-
-    void SetMesh(Mesh& _mesh);
-
-    void SetMaterial(Material& _material);
-
-    void Draw() const;
 };
 
 

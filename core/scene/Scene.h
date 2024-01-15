@@ -9,15 +9,17 @@
 #include "../renderer/Camera.h"
 
 class Scene {
+private:
+    GLFWwindow* window;
 public:
     Node* root{};
     Camera* camera;
 
-    Scene(int width, int height);
+    Scene(int width, int height, GLFWwindow* window);
 
     void Draw() const;
 
-    void OnUpdate(double dt);
+    void OnUpdate(float dt);
 };
 
 

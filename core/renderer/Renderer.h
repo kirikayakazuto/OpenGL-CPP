@@ -7,14 +7,14 @@
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <ctime>
 #include "../scene/Scene.h"
 
 class Renderer {
 private:
-    static Renderer* instance;
-public:
 
-    static Renderer* GetInstance();
+    std::time_t nowTime{};
+public:
 
     GLFWwindow* window;
 
@@ -29,10 +29,6 @@ public:
     void ProcessInput();
 
     void MainLoop(Scene* scene);
-
-    void Draw(Scene* scene);
-
-    void Update(Scene* scene);
 
 };
 

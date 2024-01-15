@@ -16,13 +16,21 @@ Node::Node(std::string _nodeName, Mesh* _mesh, Material* _material):
 }
 
 Node *Node::AddChild(Node *node) {
+    if(node->parent != nullptr) {
+        auto local_children = node->parent->children;
+        auto it = std::find(local_children.begin(), local_children.end(), node);
+        if (it != local_children.end()) {
+            local_children.erase(it);
+        }
+    }
     this->children.push_back(node);
+    node->parent = this;
     return node;
 }
 
-Node *Node::GetChild(std::string nodeName) {
+Node *Node::GetChild(const std::string& key) {
     for (const auto &item: this->children) {
-        if (item->nodeName == nodeName) {
+        if (item->nodeName == key) {
             return item;
         }
     }
@@ -49,11 +57,5 @@ void:: Node::SetScale(glm::vec3 val) {
     this->scale = val;
 }
 
-// 渲染
-void Node::Draw() const {
-    glBindVertexArray(this->mesh->GetVaoId());
-    this->material->shader->Activate();
-    this->material->ActiveTextures();
-    glDrawElements(GL_TRIANGLES, this->mesh->indices.size(), GL_UNSIGNED_INT, 0);
-}
+
 

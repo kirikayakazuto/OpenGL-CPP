@@ -17,7 +17,7 @@ public:
     GLuint ID{};
     GLuint unit;
 
-    Texture(const char* image, GLuint slot);
+    Texture(const std::string& url, GLuint slot);
 
     // void texUnit(Shader& shader, const char* uniform, GLuint unit);
     void Bind() const;

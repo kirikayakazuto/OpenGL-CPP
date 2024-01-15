@@ -9,27 +9,27 @@
 #include "Texture.h"
 #include <unordered_map>
 #include <glm/glm.hpp>
+#include<glm/gtc/matrix_transform.hpp>
+#include<glm/gtc/type_ptr.hpp>
+#include<glm/gtx/rotate_vector.hpp>
+#include<glm/gtx/vector_angle.hpp>
 
 class Material {
-public:
-
+private:
     Shader* shader;
 
-    std::unordered_map<std::string , Texture*> textureMap;
-
-    std::unordered_map<std::string , double> doubleMap;
-
-    std::unordered_map<std::string, std::variant<int, double>> uniformMap;
+    std::unordered_map<std::string, Texture*> textureMap;
+    std::unordered_map<std::string, double> doubleMap;
+    std::unordered_map<std::string, const float*> matMap;
+public:
 
     Material(Shader* shader);
 
-    void SetTexture(std::string textureName, Texture *texture);
+    void SetTexture(std::string key, Texture* val);
 
-    void SetUniformMat(std::string uniformName, glm::mat4 mat);
+    void SetUniformMat(std::string key, const float* val);
 
-    void SetUniformFloat(std::string uniformName, float val);
-
-    void ActiveTextures();
+    void Activate();
 };
 
 

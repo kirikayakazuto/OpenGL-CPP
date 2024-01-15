@@ -6,7 +6,7 @@
 #include <iostream>
 
 Renderer::Renderer() {
-
+    this->nowTime = std::time(nullptr);
 }
 
 GLFWwindow *Renderer::CreateWindow(int width, int height) {
@@ -21,7 +21,7 @@ GLFWwindow *Renderer::CreateWindow(int width, int height) {
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 #endif
 
-    GLFWwindow* window = glfwCreateWindow(width, height, "learn opengl", nullptr, nullptr);
+    auto window = glfwCreateWindow(width, height, "learn opengl", nullptr, nullptr);
     if(window == nullptr) {
         std::cout << "Failed to create GLFW window" << std::endl;
         return nullptr;
@@ -55,33 +55,18 @@ void Renderer::MainLoop(Scene* scene) {
     while (!glfwWindowShouldClose(this->window)) {
         this->ProcessInput();
 
-        glClearColor(0.2f, 0.2f, 0.2f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         // 更新逻辑
-        this->Update(scene);
+        scene->OnUpdate(0);
         // 更新渲染
-        this->Draw(scene);
-
-        glfwPollEvents();
+        scene->Draw();
+        
         glfwSwapBuffers(this->window);
+        glfwPollEvents();
     }
 
     glfwTerminate();
 }
 
-
-void Renderer::Update(Scene *scene) {
-    scene->OnUpdate(0);
-}
-
-void Renderer::Draw(Scene* scene) {
-    scene->Draw();
-}
-
-Renderer* Renderer::GetInstance() {
-    if(Renderer::instance == nullptr) {
-        Renderer::instance = new Renderer();
-    }
-    return Renderer::instance;
-}

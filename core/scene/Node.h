@@ -14,11 +14,11 @@
 class Node {
 private:
     // 位置
-    glm::vec3 position{};
+    glm::vec3 position = glm::vec3(0, 0, 0);
     // 缩放
-    glm::vec3 scale{};
+    glm::vec3 scale = glm::vec3(1, 1, 1);
 
-    glm::vec3 rotation{};
+    glm::vec3 rotation = glm::vec3(0, 0, 0);
 public:
     // 父节点
     Node* parent{};
@@ -32,8 +32,7 @@ public:
     glm::mat4 worldMatrix = glm::mat4(1.0f);
 
     Node(std::string nodeName): nodeName(std::move(nodeName)) {
-        this->position = glm::vec3(0, 0, 0);
-        this->scale = glm::vec3(1, 1, 1);
+
     }
     // 添加子节点
     Node* AddChild(Node* node) {
@@ -88,8 +87,15 @@ public:
     }
 
     void UpdateMatrix() {
-        this->worldMatrix = glm::mat4(1.0f);
-        this->worldMatrix = glm::translate(this->worldMatrix, this->position);
+        this->worldMatrix = glm::mat4(
+                1,          0.0f,           0.0f,           0.0f,
+                0.0f,           1,          0.0f,           0.0f,
+                0.0f,           0.0f,           1,      0.0f,
+                this->position[0],           this->position[1],           this->position[2],           1.0f
+                );
+//        this->worldMatrix = glm::translate(this->worldMatrix, this->position);
+//        this->worldMatrix = glm::scale(this->worldMatrix, this->scale);
+
     }
 
     template <class T_Component>

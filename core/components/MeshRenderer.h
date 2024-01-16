@@ -10,10 +10,16 @@
 #include "../renderer/Mesh.h"
 #include "../renderer/Material.h"
 
+
 class MeshRenderer: public Component{
 public:
-    Mesh* mesh;
-    Material* material;
+    Mesh* mesh{};
+    Material* material{};
+
+    virtual void OnEnable() {
+
+    }
+
 };
 
 

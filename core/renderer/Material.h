@@ -22,13 +22,37 @@ private:
 public:
     Shader* shader;
 
-    Material(Shader* shader);
+    Material(Shader* shader):
+        shader(shader),
+        textureMap(std::unordered_map<std::string , Texture*>()),
+        matMap(std::unordered_map<std::string , const float*>()) {
 
-    void SetTexture(std::string key, Texture* val);
+    }
 
-    void SetUniformMat(std::string key, const float* val);
+    void SetTexture(std::string key, Texture* val) {
+        auto pair = std::pair<std::string, Texture*>(key, val);
+        this->textureMap.insert(pair);
+    }
 
-    void Activate();
+    void SetUniformMat(std::string key, const float* val) {
+        auto pair = std::pair<std::string, const float*>(key, val);
+        this->matMap.insert(pair);
+    }
+
+    void Activate() {
+        this->shader->Activate();
+
+        for (const auto &item: this->textureMap) {
+            auto texUni = glGetUniformLocation(this->shader->ID, item.first.c_str());
+            glUniform1i(texUni, item.second->unit);
+            item.second->Bind();
+        }
+
+        for (const auto &item: this->matMap) {
+            auto uni = glGetUniformLocation(this->shader->ID, item.first.c_str());
+            glUniformMatrix4fv(uni, 1, GL_FALSE, item.second);
+        }
+    }
 };
 
 

@@ -11,10 +11,6 @@ int main() {
     auto scene = new Scene(800, 600, renderer->window);
     renderer->MainLoop(scene);
 
-    // std::cout << "do draw" << std::endl;
-
-
-
 
     return 0;
 }

@@ -7,10 +7,10 @@
 
 class Component {
 public:
-    bool enable;
-    void OnEnable();
-    void OnStart();
-    void OnDestroy();
+    bool enable{};
+    virtual void OnEnable() {}
+    virtual void OnStart() {}
+    virtual void OnDestroy() {}
 };
 
 

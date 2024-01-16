@@ -46,6 +46,11 @@ public:
         }
         this->children.push_back(node);
         node->parent = this;
+
+        for (const auto &item: node->components) {
+            item->OnInit();
+        }
+
         return node;
     }
     // 获取子节点

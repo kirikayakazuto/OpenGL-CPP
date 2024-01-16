@@ -53,6 +53,10 @@ public:
             glUniformMatrix4fv(uni, 1, GL_FALSE, item.second);
         }
     }
+
+    void UnActivate() {
+
+    }
 };
 
 

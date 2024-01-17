@@ -537,6 +537,9 @@ _vcpkg_webpmux_LIBRARY_RELEASE:FILEPATH=/Users/denglang/workspace/CppProj/learn_
 //The directory containing a CMake configuration file for freeimage.
 freeimage_DIR:PATH=/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/share/freeimage
 
+//The directory containing a CMake configuration file for freetype-gl.
+freetype-gl_DIR:PATH=/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/share/freetype-gl
+
 //The directory containing a CMake configuration file for glad.
 glad_DIR:PATH=/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/share/glad
 

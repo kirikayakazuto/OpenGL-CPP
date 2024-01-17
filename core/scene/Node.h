@@ -8,6 +8,7 @@
 #include <iostream>
 #include <vector>
 #include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 #include "../components/Component.h"
 #include "../components/MeshRenderer.h"
 
@@ -87,15 +88,14 @@ public:
     }
 
     void UpdateMatrix() {
-        this->worldMatrix = glm::mat4(
-                1,          0.0f,           0.0f,           0.0f,
-                0.0f,           1,          0.0f,           0.0f,
-                0.0f,           0.0f,           1,      0.0f,
-                this->position[0],           this->position[1],           this->position[2],           1.0f
-                );
-//        this->worldMatrix = glm::translate(this->worldMatrix, this->position);
-//        this->worldMatrix = glm::scale(this->worldMatrix, this->scale);
+        this->worldMatrix = glm::mat4(1.0f);
+        this->worldMatrix = glm::translate(this->worldMatrix, this->position);
 
+        this->worldMatrix = glm::rotate(this->worldMatrix, glm::radians(this->rotation.z), glm::vec3(0.0f, 0.0f, 1.0f));
+        this->worldMatrix = glm::rotate(this->worldMatrix, glm::radians(this->rotation.y), glm::vec3(0.0f, 1.0f, 0.0f));
+        this->worldMatrix = glm::rotate(this->worldMatrix, glm::radians(this->rotation.x), glm::vec3(1.0f, 0.0f, 0.0f));
+
+        this->worldMatrix = glm::scale(this->worldMatrix, this->scale);
     }
 
     template <class T_Component>

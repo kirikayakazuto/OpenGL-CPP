@@ -33,6 +33,10 @@ public:
     void SetMaterial(Material* m) {
         this->material = m;
     }
+
+    void OnStart() override {
+        std::cout << "call Plane on start" << std::endl;
+    }
 };
 
 

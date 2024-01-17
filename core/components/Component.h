@@ -9,10 +9,12 @@ class Component {
 private:
     bool inited = false;
 public:
-    virtual void OnInit() {
+    void OnInit() {
         if(this->inited) return;
         this->inited = true;
+        this->OnStart();
     }
+    virtual void OnStart() {}
     virtual void OnDestroy() {}
     virtual void OnUpdate(double dt) {}
 };

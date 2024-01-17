@@ -16,8 +16,12 @@ public:
     Mesh* mesh{};
     Material* material{};
 
-    virtual void OnEnable() {
+    void OnStart() override {
+        std::cout << "call mesh renderer on start" << std::endl;
+    }
 
+    void OnUpdate(double dt) override {
+        // std::cout << "on update: " << dt << std::endl;
     }
 
 };

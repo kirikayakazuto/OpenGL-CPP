@@ -11,10 +11,11 @@ find_package(glad CONFIG REQUIRED)
 find_package(glfw3 CONFIG REQUIRED)
 find_package(freeimage CONFIG REQUIRED)
 find_package(freetype-gl CONFIG REQUIRED)
+find_package(nlohmann_json CONFIG REQUIRED)
 
 
 file(GLOB_RECURSE SOURCE_FILES main.cpp "core/*.h")
 add_executable(${CMAKE_PROJECT_NAME} ${SOURCE_FILES})
 
 
-target_link_libraries(${CMAKE_PROJECT_NAME} freeimage::FreeImage freeimage::FreeImagePlus glm::glm glfw glad::glad freetype-gl ${OPENGL_LIBRARY})
+target_link_libraries(${CMAKE_PROJECT_NAME} freeimage::FreeImage freeimage::FreeImagePlus glm::glm glfw glad::glad freetype-gl nlohmann_json::nlohmann_json ${OPENGL_LIBRARY})

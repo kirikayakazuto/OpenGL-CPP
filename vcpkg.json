@@ -17,5 +17,8 @@
   }, {
     "name" : "freetype-gl",
     "version>=" : "2022-01-17#3"
+  }, {
+    "name" : "nlohmann-json",
+    "version>=" : "3.11.3"
   } ]
 }

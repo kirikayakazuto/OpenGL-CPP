@@ -44,11 +44,11 @@ private:
     }
 
 public:
-    std::vector<float> vertices;
+    std::vector<Vertex> vertices;
     std::vector<GLuint> indices;
     std::vector<AttributeFormat> attribute_info;
 
-    Mesh(std::vector<AttributeFormat>& attribute_data, std::vector<float>& v_data, std::vector<GLuint>& i_data)
+    Mesh(std::vector<AttributeFormat>& attribute_data, std::vector<Vertex>& v_data, std::vector<GLuint>& i_data)
             : attribute_info(attribute_data),
               vertices(v_data),
               indices(i_data) {
@@ -62,7 +62,6 @@ public:
         // VBO
         glGenBuffers(1, &this->VBO_ID);
         glBindBuffer(GL_ARRAY_BUFFER, this->VBO_ID);
-
         glBufferData(GL_ARRAY_BUFFER, this->vertices.size() * sizeof(Vertex), this->vertices.data(), GL_STATIC_DRAW);
 
         // EBO

@@ -1,11 +1,13 @@
 #version 330 core
 
 layout (location = 0) in vec3 a_position;
-layout (location = 1) in vec3 a_color;
-layout (location = 2) in vec2 a_uv;
+layout (location = 1) in vec3 a_normal;
+layout (location = 2) in vec3 a_color;
+layout (location = 3) in vec2 a_uv;
 
 // 差值数据
 out vec3 v_position;
+out vec3 v_normal;
 out vec3 v_color;
 out vec2 v_uv;
 

@@ -8,7 +8,9 @@
 class Component {
 private:
     bool inited = false;
+
 public:
+
     void OnInit() {
         if(this->inited) return;
         this->inited = true;

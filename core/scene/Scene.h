@@ -11,7 +11,7 @@
 #include "../components/MeshRenderer.h"
 #include "../materials/TextureMaterial.h"
 #include <stack>
-#include "../components/GltfModel.h"
+#include "../components/Model.h"
 
 class Scene {
 private:
@@ -61,7 +61,10 @@ public:
         this->root->AddChild(rightSprite);
         this->root->AddChild(leftSprite);
 
-        // auto gltfModel = new GltfModel("assets/models/bunny/scene.gltf");
+        auto m = new Node("Model");
+        auto com = m->AddComponent<Model>();
+        m->SetPosition(glm::vec3(0, 0, 0));
+        this->root->AddChild(m);
     }
 
     void Draw() const {

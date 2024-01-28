@@ -6,16 +6,17 @@
 #define LEARN_OPENGL_MODEL_H
 
 #include "./MeshRenderer.h"
+#include "../materials/SingleMaterial.h"
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
 
-class Model: public MeshRenderer{
+class Model: public MeshRenderer {
 private:
     // 路径地址
     std::string fileUrl;
-    std::vector<Mesh> meshes;
     std::string directory;
+    std::vector<Texture> textures_loaded;
 
     void LoadMesh() {
         Assimp::Importer importer;
@@ -31,6 +32,7 @@ private:
         for (int i = 0; i < node->mNumMeshes; ++i) {
             auto mesh = scene->mMeshes[node->mMeshes[i]];
             this->meshes.push_back(this->ProcessMesh(mesh, scene));
+            this->materials.push_back(SingleMaterial());
         }
         for (int i = 0; i < node->mNumChildren; ++i) {
             this->ProcessNode(node->mChildren[i], scene);
@@ -41,6 +43,7 @@ private:
         std::vector<Vertex> vertices;
         std::vector<GLuint> indices;
         for (int i = 0; i < mesh->mNumVertices; ++i) {
+            std::cout << i << std::endl;
             Vertex vertex;
             glm::vec3 position;
             position.x = mesh->mVertices[i].x;
@@ -59,16 +62,16 @@ private:
                 vec.x = mesh->mTextureCoords[0][i].x;
                 vec.y = mesh->mTextureCoords[0][i].y;
                 vertex.uv = vec;
-                glm::vec3 tangent;
-                tangent.x = mesh->mTangents[i].x;
-                tangent.y = mesh->mTangents[i].y;
-                tangent.z = mesh->mTangents[i].z;
-                vertex.tangent = tangent;
-                glm::vec3 bitangent;
-                bitangent.x = mesh->mBitangents[i].x;
-                bitangent.y = mesh->mBitangents[i].y;
-                bitangent.z = mesh->mBitangents[i].z;
-                vertex.bitangent = bitangent;
+//                glm::vec3 tangent;
+//                tangent.x = mesh->mTangents[i].x;
+//                tangent.y = mesh->mTangents[i].y;
+//                tangent.z = mesh->mTangents[i].z;
+//                vertex.tangent = tangent;
+//                glm::vec3 bitangent;
+//                bitangent.x = mesh->mBitangents[i].x;
+//                bitangent.y = mesh->mBitangents[i].y;
+//                bitangent.z = mesh->mBitangents[i].z;
+//                vertex.bitangent = bitangent;
             } else {
                 vertex.uv = glm::vec2(0.0f, 0.0f);
             }
@@ -80,6 +83,7 @@ private:
                 indices.push_back(face.mIndices[j]);
             }
         }
+        std::cout << "process mesh end" << std::endl;
         std::vector<AttributeFormat> attribute = {
                 { "a_position", 3 },
                 {"a_normal", 3},
@@ -87,13 +91,41 @@ private:
                 {"a_tangent", 3},
                 {"a_bitangent", 3}
         };
+
+        auto m = scene->mMaterials[mesh->mMaterialIndex];
+        this->LoadTextures(m, aiTextureType_DIFFUSE);
         return Mesh(attribute, vertices, indices);
+    }
+
+    void LoadTextures(aiMaterial* aiMaterial, aiTextureType type) {
+        std::vector<Texture> textures;
+        for(unsigned int i = 0; i < aiMaterial->GetTextureCount(type); i++)
+        {
+            aiString str;
+            aiMaterial->GetTexture(type, i, &str);
+            // check if texture was loaded before and if so, continue to next iteration: skip loading a new texture
+            bool skip = false;
+            for(unsigned int j = 0; j < textures_loaded.size(); j++) {
+                if(std::strcmp(textures_loaded[j].url.data(), str.C_Str()) == 0) {
+                    textures.push_back(textures_loaded[j]);
+                    skip = true; // a texture with the same filepath has already been loaded, continue to next one. (optimization)
+                    break;
+                }
+            }
+            if(!skip) {   // if texture hasn't been loaded already, load it
+                Texture texture("", 0);
+                textures.push_back(texture);
+                textures_loaded.push_back(texture);  // store it as texture loaded for entire model, to ensure we won't unnecessary load duplicate textures.
+            }
+        }
+        return textures;
     }
 public:
 
     std::unordered_map<std::string, Texture*> textures;
 
-    Model(std::string& url) {
+    Model(): MeshRenderer() {
+        std::string url = "assets/models/man/nanosuit.obj";
         this->fileUrl = url;
         this->directory = url.substr(0, url.find_last_of('/'));
         std::vector<AttributeFormat> attribute = {
@@ -104,9 +136,7 @@ public:
                 {"a_bitangent", 3}
         };
         this->LoadMesh();
-        this->mesh = new Mesh(attribute, this->vertices, this->indices);
     }
-
 };
 
 #endif //LEARN_OPENGL_MODEL_H

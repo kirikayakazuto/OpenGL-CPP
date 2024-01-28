@@ -14,10 +14,12 @@
 
 class Texture {
 public:
+    std::string url;
     GLuint ID{};
     GLuint unit;
 
     Texture(const std::string& url, GLuint slot) {
+        this->url = url;
         auto image = url.c_str();
         FreeImage_Initialise();
 
@@ -31,8 +33,8 @@ public:
         }
 
         if (imageBitmap) {
-            auto widthImg = FreeImage_GetWidth(imageBitmap);
-            auto heightImg = FreeImage_GetHeight(imageBitmap);
+            auto widthImg = (int)FreeImage_GetWidth(imageBitmap);
+            auto heightImg = (int)FreeImage_GetHeight(imageBitmap);
             std::cout << widthImg << " x " << heightImg << std::endl;
 
             GLubyte* bytes = FreeImage_GetBits(imageBitmap);

@@ -403,6 +403,9 @@ PNG_LIBRARY_RELEASE:FILEPATH=/Users/denglang/workspace/CppProj/learn_opengl/cmak
 //Path to a file.
 PNG_PNG_INCLUDE_DIR:PATH=/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/include
 
+//The directory containing a CMake configuration file for RapidJSON.
+RapidJSON_DIR:PATH=/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/share/rapidjson
+
 //The directory containing a CMake configuration file for STB.
 STB_DIR:PATH=STB_DIR-NOTFOUND
 
@@ -537,6 +540,9 @@ _vcpkg_webpmux_LIBRARY_DEBUG:FILEPATH=/Users/denglang/workspace/CppProj/learn_op
 //Path to a library.
 _vcpkg_webpmux_LIBRARY_RELEASE:FILEPATH=/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/lib/libwebpmux.a
 
+//The directory containing a CMake configuration file for assimp.
+assimp_DIR:PATH=/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/share/assimp
+
 //The directory containing a CMake configuration file for freeimage.
 freeimage_DIR:PATH=/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/share/freeimage
 
@@ -551,6 +557,9 @@ glfw3_DIR:PATH=/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/
 
 //The directory containing a CMake configuration file for glm.
 glm_DIR:PATH=/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/share/glm
+
+//The directory containing a CMake configuration file for kubazip.
+kubazip_DIR:PATH=/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/share/kubazip
 
 //The directory containing a CMake configuration file for lcms2.
 lcms2_DIR:PATH=/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/share/lcms2
@@ -606,6 +615,15 @@ pkgcfg_lib_PC_LIBRAW_raw:FILEPATH=/Users/denglang/workspace/CppProj/learn_opengl
 //Path to a library.
 pkgcfg_lib_PC_LIBRAW_z:FILEPATH=/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/debug/lib/libz.a
 
+//The directory containing a CMake configuration file for poly2tri.
+poly2tri_DIR:PATH=/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/share/poly2tri
+
+//The directory containing a CMake configuration file for polyclipping.
+polyclipping_DIR:PATH=/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/share/polyclipping
+
+//The directory containing a CMake configuration file for pugixml.
+pugixml_DIR:PATH=/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/share/pugixml
+
 //The directory containing a CMake configuration file for stb.
 stb_DIR:PATH=stb_DIR-NOTFOUND
 
@@ -617,6 +635,12 @@ stdConfig_DIR:PATH=stdConfig_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for std.
 std_DIR:PATH=std_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for unofficial-minizip.
+unofficial-minizip_DIR:PATH=/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/share/unofficial-minizip
+
+//The directory containing a CMake configuration file for utf8cpp.
+utf8cpp_DIR:PATH=/Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/share/utf8cpp
 
 
 ########################

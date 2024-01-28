@@ -8,7 +8,7 @@
 #include "../renderer/Material.h"
 #include "../renderer/Texture.h"
 
-class TextureMaterial: public Material{
+class TextureMaterial: public Material {
 private:
     Texture* mainTexture;
 public:

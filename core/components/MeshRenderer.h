@@ -11,11 +11,11 @@
 #include "../renderer/Material.h"
 
 
-class MeshRenderer: public Component{
+class MeshRenderer: public Component {
 public:
-    Mesh* mesh{};
-    Material* material{};
-
+    std::vector<Mesh> meshes;
+    std::vector<Material> materials;
+    
     void OnStart() override {
         std::cout << "call mesh renderer on start" << std::endl;
     }

@@ -7,15 +7,23 @@
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include <ctime>
 #include "../scene/Scene.h"
+#include <nanovg.h>
+#define NANOVG_GL3_IMPLEMENTATION	// Use GL3 implementation.
+#include <nanovg_gl.h>
+
 
 class Renderer {
 private:
 
-    std::time_t nowTime{};
+    NVGcontext* vg;
+    std::vector<int> images;
+    int width;
+    int height;
 
     GLFWwindow* CreateWindow(int width, int height) {
+        this->width = width;
+        this->height = height;
         // 初始化glfw
         glfwInit();
 
@@ -52,16 +60,28 @@ private:
     static void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
         glViewport(0, 0, width, height);
     }
-public:
 
+    void InitNanovg() {
+        this->vg = nvgCreateGL3(NVG_ANTIALIAS | NVG_STENCIL_STROKES);
+        auto fontNormal = nvgCreateFont(this->vg, "sans", "assets/fonts/Roboto-Regular.ttf");
+        auto fontEmoji = nvgCreateFont(this->vg, "emoji", "assets/fonts/NotoEmoji-Regular.ttf");
+        nvgAddFallbackFontId(this->vg, fontNormal, fontEmoji);
+        std::string icons[] = {"addict.jpg", "backToBasics.jpg", "ballAndCup.jpg"};
+        std::string baseUrl = "assets/icons/";
+        for (const auto &item: icons) {
+            auto image = nvgCreateImage(this->vg, (baseUrl + item).c_str(), 0);
+            this->images.push_back(image);
+        }
+    }
+public:
     GLFWwindow* window{};
 
     Renderer() {
-        this->nowTime = std::time(nullptr);
     }
 
     void Init(int width, int height) {
         this->window = this->CreateWindow(width, height);
+        this->InitNanovg();
     }
 
     void MainLoop(Scene* scene) {
@@ -75,10 +95,42 @@ public:
             // 更新渲染
             scene->Draw();
 
+            nvgBeginFrame(this->vg, width * 1.0f, height * 1.0f, 1.0f);
+
+            nvgBeginPath(this->vg);
+            nvgRect(vg, 200, 100, 100, 100);
+            nvgFillColor(this->vg, nvgRGBA(255, 192, 0, 255));
+            nvgFill(this->vg);
+
+            nvgBeginPath(this->vg);
+            nvgRect(this->vg, 100,100, 120,30);
+            nvgCircle(this->vg, 120,120, 5);
+            nvgPathWinding(this->vg, NVG_HOLE);	// Mark circle as a hole.
+            nvgFillColor(this->vg, nvgRGBA(255,192,0,255));
+            nvgFill(this->vg);
+
+            nvgFontSize(this->vg, 36.0f);
+            nvgFontFace(this->vg, "sans");
+            nvgTextAlign(this->vg, NVG_ALIGN_CENTER | NVG_ALIGN_MIDDLE);
+            nvgFillColor(this->vg, nvgRGBA(255, 255, 255, 255));
+            nvgText(this->vg, 100.0f, 100.0f, "Hello OpenGL!", nullptr);
+
+            auto startX = 100;
+            for (int i=0; i<this->images.size(); i++) {
+                auto x = startX + 200 * i;
+                auto y = 200;
+                nvgBeginPath(this->vg);
+                nvgRect(this->vg, x, y, 100, 100);
+                nvgFillPaint(this->vg, nvgImagePattern(this->vg, x, y, 200, 200, 0, this->images[i], 1));
+                nvgFill(this->vg);
+            }
+            nvgEndFrame(this->vg);
+
             glfwSwapBuffers(this->window);
             glfwPollEvents();
         }
 
+        nvgDeleteGL3(this->vg);
         glfwTerminate();
     }
 

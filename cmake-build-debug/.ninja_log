@@ -31,10 +31,10 @@
 247	442	1704634356146583060	libs/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o	87d39c15d154b0e3
 1027	1141	1696340066367785000	glfw/src/libglfw3.a	59e8727b7e2724f6
 8	416	1696340055652508368	glfw/src/CMakeFiles/glfw.dir/context.c.o	c32c9e65317aeca6
-1	3709	1705457646908762288	build.ninja	50292affae15270d
+1	3709	1706436782361813569	build.ninja	50292affae15270d
 444	1004	1696340066216412395	glfw/src/CMakeFiles/glfw.dir/cocoa_joystick.m.o	8937a35718ac14b3
 435	1003	1696340066219515799	glfw/src/CMakeFiles/glfw.dir/cocoa_init.m.o	8266a6bb44fce3af
-591	844	1705417702038811953	learn_opengl	b672cf4e6071b818
+1045	1344	1706376936096695525	learn_opengl	912c8e42b45d5509
 22	250	1704634355955177508	libs/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o	44512358b8c59d3e
 475	1027	1696340066248651133	glfw/src/CMakeFiles/glfw.dir/cocoa_window.m.o	9aed7e12e429abf4
 476	1002	1696340066216611145	glfw/src/CMakeFiles/glfw.dir/nsgl_context.m.o	238035abeb7f3bb3
@@ -51,7 +51,7 @@
 15	435	1696340065657433819	glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o	a5db9652834cc88
 459	996	1696340066211887206	glfw/src/CMakeFiles/glfw.dir/cocoa_monitor.m.o	177ab4229eab38ea
 9	407	1696340055642218870	glfw/src/CMakeFiles/glfw.dir/platform.c.o	392631f4cf0a7db2
-8	591	1705417701784873468	CMakeFiles/learn_opengl.dir/main.cpp.o	b3e0b7326f7d024a
+24	1044	1706376935797436258	CMakeFiles/learn_opengl.dir/main.cpp.o	90d5b5fcbf467a0d
 3	35	1705326636675794413	CMakeFiles/learn_opengl.dir/core/components/BaseComponent.cpp.o	fff545c2303b919f
 649	682	1704635904542653000	libs/glfw/src/libglfw3.a	e04d21590467795f
 9	410	1696340055646102854	glfw/src/CMakeFiles/glfw.dir/vulkan.c.o	bacb980e3b440778
@@ -61,3 +61,7 @@
 434	701	1696340065922970729	glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o	bc6f82ca571a6f89
 68	424	1696340055661734662	glfw/src/CMakeFiles/glfw.dir/window.c.o	36929ec8821456c4
 9	549	1705334039966628439	CMakeFiles/learn_opengl.dir/core/materials/TextureMaterial.cpp.o	3cf6c3330d64f185
+13	868	1706447228051285893	CMakeFiles/learn_opengl.dir/main.cpp.o	90d5b5fcbf467a0d
+868	1181	1706447228367414359	learn_opengl	912c8e42b45d5509
+8	862	1706447278088976226	CMakeFiles/learn_opengl.dir/main.cpp.o	90d5b5fcbf467a0d
+862	1164	1706447278393508329	learn_opengl	912c8e42b45d5509

@@ -20,5 +20,14 @@
   }, {
     "name" : "nlohmann-json",
     "version>=" : "3.11.3"
+  }, {
+    "name" : "tinygltf",
+    "version>=" : "2.8.19"
+  }, {
+    "name" : "nanovg",
+    "version>=" : "2019-08-30#6"
+  }, {
+    "name" : "assimp",
+    "version>=" : "5.3.1#3"
   } ]
 }

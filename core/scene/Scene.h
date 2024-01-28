@@ -11,6 +11,7 @@
 #include "../components/MeshRenderer.h"
 #include "../materials/TextureMaterial.h"
 #include <stack>
+#include "../components/GltfModel.h"
 
 class Scene {
 private:
@@ -47,18 +48,20 @@ public:
 
         auto leftSprite = new Node("Sprite");
         auto plane2 = leftSprite->AddComponent<Plane>();
-        plane2->SetMaterial(new TextureMaterial("assets/pop_cat.png"));
+        plane2->SetMaterial(TextureMaterial("assets/pop_cat.png"));
         leftSprite->SetPosition(glm::vec3(-1, 0, 0));
         leftSprite->SetScale(glm::vec3(2, 1, 1));
 
         auto rightSprite = new Node("Sprite");
         auto plane3 = rightSprite->AddComponent<Plane>();
-        plane3->SetMaterial(new TextureMaterial("assets/tt.png"));
+        plane3->SetMaterial(TextureMaterial("assets/tt.png"));
         rightSprite->SetPosition(glm::vec3(1, 0, 0));
         rightSprite->SetRotation(glm::vec3(0, 45, 0));
 
         this->root->AddChild(rightSprite);
         this->root->AddChild(leftSprite);
+
+        // auto gltfModel = new GltfModel("assets/models/bunny/scene.gltf");
     }
 
     void Draw() const {
@@ -69,11 +72,15 @@ public:
         for (const auto &item: nodes) {
             auto meshRenderer = item->GetComponent<MeshRenderer>();
             if(!meshRenderer) continue;
-            glBindVertexArray(meshRenderer->mesh->GetVaoId());
-            meshRenderer->material->SetUniformMat("u_worldMatrix", glm::value_ptr(item->worldMatrix));
-            meshRenderer->material->SetUniformMat("u_cameraMatrix", glm::value_ptr(this->camera->projection * this->camera->view));
-            meshRenderer->material->Activate();
-            glDrawElements(GL_TRIANGLES, (GLsizei)meshRenderer->mesh->indices.size(), GL_UNSIGNED_INT, 0);
+            for(int i=0; i<meshRenderer->meshes.size(); i++) {
+                auto mesh = meshRenderer->meshes[i];
+                auto material = meshRenderer->materials[i];
+                glBindVertexArray(mesh.GetVaoId());
+                material.SetUniformMat("u_worldMatrix", glm::value_ptr(item->worldMatrix));
+                material.SetUniformMat("u_cameraMatrix", glm::value_ptr(this->camera->projection * this->camera->view));
+                material.Activate();
+                glDrawElements(GL_TRIANGLES, (GLsizei)mesh.indices.size(), GL_UNSIGNED_INT, 0);
+            }
         }
     }
 

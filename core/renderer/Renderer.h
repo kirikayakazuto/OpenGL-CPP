@@ -88,7 +88,7 @@ public:
         while (!glfwWindowShouldClose(this->window)) {
             this->ProcessInput();
 
-            glClearColor(0.05f, 0.05f, 0.05f, 1.0f);
+            glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
             // 更新逻辑
             scene->OnUpdate(0);

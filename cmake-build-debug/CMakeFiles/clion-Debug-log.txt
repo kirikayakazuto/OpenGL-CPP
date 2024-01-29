@@ -1,216 +1,8 @@
 /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/aarch64/ninja -DCMAKE_TOOLCHAIN_FILE=/Users/denglang/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake -G Ninja -S /Users/denglang/workspace/CppProj/learn_opengl -B /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug
 -- Running vcpkg install
 Detecting compiler hash for triplet arm64-osx...
-The following packages will be built and installed:
-    assimp:arm64-osx@5.3.1#3 -- /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/versioning_/versions/assimp/76ae4b01818ee27c5beac4d0b18cb566f94f27ec
-  * draco:arm64-osx@1.5.6#1 -- /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/versioning_/versions/draco/7766920ec32ef9da00121a0668edf41bf9d1d76b
-  * kubazip:arm64-osx@0.2.6 -- /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/versioning_/versions/kubazip/a53b15054c06a67cd7ba9f19e54476893cddad72
-  * minizip:arm64-osx@1.3#1 -- /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/versioning_/versions/minizip/91fe1aaa8a5d696bda657a3d2b687fecfa92a7c3
-  * poly2tri:arm64-osx@2020-07-21#3 -- /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/versioning_/versions/poly2tri/6f490bcfed9bb8b55036006a4389bfa7e94c73ff
-  * polyclipping:arm64-osx@6.4.2#12 -- /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/versioning_/versions/polyclipping/7de01c0a001bc72c4d934184b3bd4ae97f860c01
-  * pugixml:arm64-osx@1.14 -- /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/versioning_/versions/pugixml/6e38344aea6e7529afde3895e0885ed5cb0c0542
-  * rapidjson:arm64-osx@2023-07-17 -- /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/versioning_/versions/rapidjson/9da8fa409b1afef5674fe412237db0504cf6156e
-  * utfcpp:arm64-osx@4.0.2 -- /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/versioning_/versions/utfcpp/f3ceee3e19b95edf9e59c813da7764a68145bfd1
-  * vcpkg-cmake-get-vars:arm64-osx@2023-03-02 -- /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/versioning_/versions/vcpkg-cmake-get-vars/2e624c2cf12a97a7a802e31ff1d28b9fa6ba9bde
-Additional packages (*) will be modified to complete this operation.
-Restored 0 package(s) from /Users/denglang/.cache/vcpkg/archives in 14.2 us. Use --debug to see more details.
-Installing 1/10 utfcpp:arm64-osx@4.0.2...
-Building utfcpp:arm64-osx@4.0.2...
-warning: -- Using community triplet arm64-osx. This triplet configuration is not guaranteed to succeed.
--- [COMMUNITY] Loading triplet configuration from: /Users/denglang/.vcpkg-clion/vcpkg/triplets/community/arm64-osx.cmake
--- Installing port from location: /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/versioning_/versions/utfcpp/f3ceee3e19b95edf9e59c813da7764a68145bfd1
--- Downloading https://github.com/nemtrif/utfcpp/archive/v4.0.2.tar.gz -> nemtrif-utfcpp-v4.0.2.tar.gz...
--- Extracting source /Users/denglang/.vcpkg-clion/vcpkg/downloads/nemtrif-utfcpp-v4.0.2.tar.gz
--- Applying patch fix-include-path.patch
--- Using source at /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/utfcpp/src/v4.0.2-6b9998c895.clean
--- Found external ninja('1.10.2').
--- Configuring arm64-osx
--- Building arm64-osx-rel
--- Installing: /Users/denglang/.vcpkg-clion/vcpkg/packages/utfcpp_arm64-osx/share/utfcpp/copyright
--- Performing post-build validation
-Stored binaries in 1 destinations in 9.15 ms.
-Elapsed time to handle utfcpp:arm64-osx: 2.6 s
-utfcpp:arm64-osx package ABI: b8902c61bc266577f19fd77e3d81b8e34b2821ab459d80048bf144574a99ca4e
-Installing 2/10 rapidjson:arm64-osx@2023-07-17...
-Building rapidjson:arm64-osx@2023-07-17...
-warning: -- Using community triplet arm64-osx. This triplet configuration is not guaranteed to succeed.
--- [COMMUNITY] Loading triplet configuration from: /Users/denglang/.vcpkg-clion/vcpkg/triplets/community/arm64-osx.cmake
--- Installing port from location: /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/versioning_/versions/rapidjson/9da8fa409b1afef5674fe412237db0504cf6156e
--- Downloading https://github.com/Tencent/rapidjson/archive/a95e013b97ca6523f32da23f5095fcc9dd6067e5.tar.gz -> Tencent-rapidjson-a95e013b97ca6523f32da23f5095fcc9dd6067e5-2.tar.gz...
--- Extracting source /Users/denglang/.vcpkg-clion/vcpkg/downloads/Tencent-rapidjson-a95e013b97ca6523f32da23f5095fcc9dd6067e5-2.tar.gz
--- Using source at /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/rapidjson/src/c9dd6067e5-8a215fc499.clean
--- Found external ninja('1.10.2').
--- Configuring arm64-osx
--- Building arm64-osx-dbg
--- Building arm64-osx-rel
--- Fixing pkgconfig file: /Users/denglang/.vcpkg-clion/vcpkg/packages/rapidjson_arm64-osx/lib/pkgconfig/RapidJSON.pc
--- Fixing pkgconfig file: /Users/denglang/.vcpkg-clion/vcpkg/packages/rapidjson_arm64-osx/debug/lib/pkgconfig/RapidJSON.pc
--- Installing: /Users/denglang/.vcpkg-clion/vcpkg/packages/rapidjson_arm64-osx/share/rapidjson/copyright
--- Performing post-build validation
-Stored binaries in 1 destinations in 22.3 ms.
-Elapsed time to handle rapidjson:arm64-osx: 3.9 s
-rapidjson:arm64-osx package ABI: 65203686795aa598394cac68a086a18ea88acbdbfebd0bf715392ee421428b29
-Installing 3/10 pugixml:arm64-osx@1.14...
-Building pugixml:arm64-osx@1.14...
-warning: -- Using community triplet arm64-osx. This triplet configuration is not guaranteed to succeed.
--- [COMMUNITY] Loading triplet configuration from: /Users/denglang/.vcpkg-clion/vcpkg/triplets/community/arm64-osx.cmake
--- Installing port from location: /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/versioning_/versions/pugixml/6e38344aea6e7529afde3895e0885ed5cb0c0542
--- Downloading https://github.com/zeux/pugixml/archive/v1.14.tar.gz -> zeux-pugixml-v1.14.tar.gz...
--- Extracting source /Users/denglang/.vcpkg-clion/vcpkg/downloads/zeux-pugixml-v1.14.tar.gz
--- Using source at /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/pugixml/src/v1.14-3215fd4dab.clean
--- Found external ninja('1.10.2').
--- Configuring arm64-osx
--- Building arm64-osx-dbg
--- Building arm64-osx-rel
--- Fixing pkgconfig file: /Users/denglang/.vcpkg-clion/vcpkg/packages/pugixml_arm64-osx/lib/pkgconfig/pugixml.pc
--- Fixing pkgconfig file: /Users/denglang/.vcpkg-clion/vcpkg/packages/pugixml_arm64-osx/debug/lib/pkgconfig/pugixml.pc
--- Installing: /Users/denglang/.vcpkg-clion/vcpkg/packages/pugixml_arm64-osx/share/pugixml/copyright
--- Performing post-build validation
-Stored binaries in 1 destinations in 48.9 ms.
-Elapsed time to handle pugixml:arm64-osx: 5.6 s
-pugixml:arm64-osx package ABI: 1dab9dc8c7491a5112806a2c32a404a8cc283226356e7c89a4749d63eeba05c0
-Installing 4/10 polyclipping:arm64-osx@6.4.2#12...
-Building polyclipping:arm64-osx@6.4.2#12...
-warning: -- Using community triplet arm64-osx. This triplet configuration is not guaranteed to succeed.
--- [COMMUNITY] Loading triplet configuration from: /Users/denglang/.vcpkg-clion/vcpkg/triplets/community/arm64-osx.cmake
--- Installing port from location: /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/versioning_/versions/polyclipping/7de01c0a001bc72c4d934184b3bd4ae97f860c01
--- Downloading https://sourceforge.net/projects/polyclipping//files/clipper_ver6.4.2.zip/download;https://sourceforge.net/projects/polyclipping//files/clipper_ver6.4.2.zip/download?use_mirror=cfhcable;https://sourceforge.net/projects/polyclipping//files/clipper_ver6.4.2.zip/download?use_mirror=pilotfiber;https://sourceforge.net/projects/polyclipping//files/clipper_ver6.4.2.zip/download?use_mirror=gigenet;https://sourceforge.net/projects/polyclipping//files/clipper_ver6.4.2.zip/download?use_mirror=versaweb;https://sourceforge.net/projects/polyclipping//files/clipper_ver6.4.2.zip/download?use_mirror=ayera;https://sourceforge.net/projects/polyclipping//files/clipper_ver6.4.2.zip/download?use_mirror=netactuate;https://sourceforge.net/projects/polyclipping//files/clipper_ver6.4.2.zip/download?use_mirror=phoenixnap;https://sourceforge.net/projects/polyclipping//files/clipper_ver6.4.2.zip/download?use_mirror=astuteinternet;https://sourceforge.net/projects/polyclipping//files/clipper_ver6.4.2.zip/download?use_mirror=freefr;https://sourceforge.net/projects/polyclipping//files/clipper_ver6.4.2.zip/download?use_mirror=netcologne;https://sourceforge.net/projects/polyclipping//files/clipper_ver6.4.2.zip/download?use_mirror=deac-riga;https://sourceforge.net/projects/polyclipping//files/clipper_ver6.4.2.zip/download?use_mirror=excellmedia;https://sourceforge.net/projects/polyclipping//files/clipper_ver6.4.2.zip/download?use_mirror=iweb;https://sourceforge.net/projects/polyclipping//files/clipper_ver6.4.2.zip/download?use_mirror=jaist;https://sourceforge.net/projects/polyclipping//files/clipper_ver6.4.2.zip/download?use_mirror=jztkft;https://sourceforge.net/projects/polyclipping//files/clipper_ver6.4.2.zip/download?use_mirror=managedway;https://sourceforge.net/projects/polyclipping//files/clipper_ver6.4.2.zip/download?use_mirror=nchc;https://sourceforge.net/projects/polyclipping//files/clipper_ver6.4.2.zip/download?use_mirror=netix;https://sourceforge.net/projects/polyclipping//files/clipper_ver6.4.2.zip/download?use_mirror=ufpr;https://sourceforge.net/projects/polyclipping//files/clipper_ver6.4.2.zip/download?use_mirror=tenet -> clipper_ver6.4.2.zip...
--- Extracting source /Users/denglang/.vcpkg-clion/vcpkg/downloads/clipper_ver6.4.2.zip
--- Applying patch fix_targets.patch
--- Using source at /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/polyclipping/src/ipper_ver6-06b887c850.clean
--- Found external ninja('1.10.2').
--- Configuring arm64-osx
--- Building arm64-osx-dbg
--- Building arm64-osx-rel
--- Fixing pkgconfig file: /Users/denglang/.vcpkg-clion/vcpkg/packages/polyclipping_arm64-osx/lib/pkgconfig/polyclipping.pc
--- Fixing pkgconfig file: /Users/denglang/.vcpkg-clion/vcpkg/packages/polyclipping_arm64-osx/debug/lib/pkgconfig/polyclipping.pc
--- Installing: /Users/denglang/.vcpkg-clion/vcpkg/packages/polyclipping_arm64-osx/share/clipper/FindCLIPPER.cmake
--- Installing: /Users/denglang/.vcpkg-clion/vcpkg/packages/polyclipping_arm64-osx/share/clipper/vcpkg-cmake-wrapper.cmake
--- Installing: /Users/denglang/.vcpkg-clion/vcpkg/packages/polyclipping_arm64-osx/share/polyclipping/copyright
--- Fixing pkgconfig file: /Users/denglang/.vcpkg-clion/vcpkg/packages/polyclipping_arm64-osx/lib/pkgconfig/polyclipping.pc
--- Fixing pkgconfig file: /Users/denglang/.vcpkg-clion/vcpkg/packages/polyclipping_arm64-osx/debug/lib/pkgconfig/polyclipping.pc
--- Performing post-build validation
-Stored binaries in 1 destinations in 55.9 ms.
-Elapsed time to handle polyclipping:arm64-osx: 12 s
-polyclipping:arm64-osx package ABI: 54abe409090b253034fd3377cd9f93f4f1ebb250da967fea57cfa366878c2d9d
-Installing 5/10 poly2tri:arm64-osx@2020-07-21#3...
-Building poly2tri:arm64-osx@2020-07-21#3...
-warning: -- Using community triplet arm64-osx. This triplet configuration is not guaranteed to succeed.
--- [COMMUNITY] Loading triplet configuration from: /Users/denglang/.vcpkg-clion/vcpkg/triplets/community/arm64-osx.cmake
--- Installing port from location: /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/versioning_/versions/poly2tri/6f490bcfed9bb8b55036006a4389bfa7e94c73ff
--- Downloading https://github.com/greenm01/poly2tri/archive/88de49021b6d9bef6faa1bc94ceb3fbd85c3c204.tar.gz -> greenm01-poly2tri-88de49021b6d9bef6faa1bc94ceb3fbd85c3c204.tar.gz...
--- Extracting source /Users/denglang/.vcpkg-clion/vcpkg/downloads/greenm01-poly2tri-88de49021b6d9bef6faa1bc94ceb3fbd85c3c204.tar.gz
--- Applying patch fix-sweep-h-codepage.patch
--- Using source at /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/poly2tri/src/bd85c3c204-6194be63e9.clean
--- Found external ninja('1.10.2').
--- Configuring arm64-osx
--- Building arm64-osx-dbg
--- Building arm64-osx-rel
--- Installing: /Users/denglang/.vcpkg-clion/vcpkg/packages/poly2tri_arm64-osx/share/poly2tri/copyright
--- Performing post-build validation
-Stored binaries in 1 destinations in 44.7 ms.
-Elapsed time to handle poly2tri:arm64-osx: 4 s
-poly2tri:arm64-osx package ABI: 883602843a4d80c6df0358ae36dd6c4f5a7b73583e62eee2c3b7c14f401c1ce7
-Installing 6/10 vcpkg-cmake-get-vars:arm64-osx@2023-03-02...
-Building vcpkg-cmake-get-vars:arm64-osx@2023-03-02...
-warning: -- Using community triplet arm64-osx. This triplet configuration is not guaranteed to succeed.
--- [COMMUNITY] Loading triplet configuration from: /Users/denglang/.vcpkg-clion/vcpkg/triplets/community/arm64-osx.cmake
--- Installing port from location: /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/versioning_/versions/vcpkg-cmake-get-vars/2e624c2cf12a97a7a802e31ff1d28b9fa6ba9bde
--- Installing: /Users/denglang/.vcpkg-clion/vcpkg/packages/vcpkg-cmake-get-vars_arm64-osx/share/vcpkg-cmake-get-vars/vcpkg_cmake_get_vars.cmake
--- Installing: /Users/denglang/.vcpkg-clion/vcpkg/packages/vcpkg-cmake-get-vars_arm64-osx/share/vcpkg-cmake-get-vars/cmake_get_vars
--- Installing: /Users/denglang/.vcpkg-clion/vcpkg/packages/vcpkg-cmake-get-vars_arm64-osx/share/vcpkg-cmake-get-vars/cmake_get_vars/CMakeLists.txt
--- Installing: /Users/denglang/.vcpkg-clion/vcpkg/packages/vcpkg-cmake-get-vars_arm64-osx/share/vcpkg-cmake-get-vars/vcpkg-port-config.cmake
--- Installing: /Users/denglang/.vcpkg-clion/vcpkg/packages/vcpkg-cmake-get-vars_arm64-osx/share/vcpkg-cmake-get-vars/copyright
--- Performing post-build validation
-Stored binaries in 1 destinations in 6.15 ms.
-Elapsed time to handle vcpkg-cmake-get-vars:arm64-osx: 28.4 ms
-vcpkg-cmake-get-vars:arm64-osx package ABI: 9a202bba677b56a70e2308825372e1b7d58260c531518f0a7b278cabba9f4c8a
-Installing 7/10 minizip:arm64-osx@1.3#1...
-Building minizip:arm64-osx@1.3#1...
-warning: -- Using community triplet arm64-osx. This triplet configuration is not guaranteed to succeed.
--- [COMMUNITY] Loading triplet configuration from: /Users/denglang/.vcpkg-clion/vcpkg/triplets/community/arm64-osx.cmake
--- Installing port from location: /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/versioning_/versions/minizip/91fe1aaa8a5d696bda657a3d2b687fecfa92a7c3
--- Using cached madler-zlib-v1.3.tar.gz.
--- Extracting source /Users/denglang/.vcpkg-clion/vcpkg/downloads/madler-zlib-v1.3.tar.gz
--- Applying patch 0001-remove-ifndef-NOUNCRYPT.patch
--- Applying patch 0002-add-declaration-for-mkdir.patch
--- Applying patch pkgconfig.patch
--- Applying patch android-fileapi.patch
--- Using source at /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/minizip/src/v1.3-5a2fb95c10.clean
--- Found external ninja('1.10.2').
--- Configuring arm64-osx
--- Building arm64-osx-dbg
--- Building arm64-osx-rel
--- Fixing pkgconfig file: /Users/denglang/.vcpkg-clion/vcpkg/packages/minizip_arm64-osx/lib/pkgconfig/minizip.pc
--- Fixing pkgconfig file: /Users/denglang/.vcpkg-clion/vcpkg/packages/minizip_arm64-osx/debug/lib/pkgconfig/minizip.pc
--- Installing: /Users/denglang/.vcpkg-clion/vcpkg/packages/minizip_arm64-osx/share/minizip/copyright
--- Performing post-build validation
-Stored binaries in 1 destinations in 14.3 ms.
-Elapsed time to handle minizip:arm64-osx: 812 ms
-minizip:arm64-osx package ABI: 5ca43be62127034564c39a00f340f3b1a3b7f7eee438743c759273ae0ead57c4
-Installing 8/10 kubazip:arm64-osx@0.2.6...
-Building kubazip:arm64-osx@0.2.6...
-warning: -- Using community triplet arm64-osx. This triplet configuration is not guaranteed to succeed.
--- [COMMUNITY] Loading triplet configuration from: /Users/denglang/.vcpkg-clion/vcpkg/triplets/community/arm64-osx.cmake
--- Installing port from location: /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/versioning_/versions/kubazip/a53b15054c06a67cd7ba9f19e54476893cddad72
--- Downloading https://github.com/kuba--/zip/archive/v0.2.6.tar.gz -> kuba---zip-v0.2.6.tar.gz...
--- Extracting source /Users/denglang/.vcpkg-clion/vcpkg/downloads/kuba---zip-v0.2.6.tar.gz
--- Applying patch fix_targets.patch
--- Using source at /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/kubazip/src/v0.2.6-96d5bb661a.clean
--- Found external ninja('1.10.2').
--- Configuring arm64-osx
--- Building arm64-osx-dbg
--- Building arm64-osx-rel
--- Installing: /Users/denglang/.vcpkg-clion/vcpkg/packages/kubazip_arm64-osx/share/kubazip/copyright
--- Performing post-build validation
-Stored binaries in 1 destinations in 27.6 ms.
-Elapsed time to handle kubazip:arm64-osx: 4 s
-kubazip:arm64-osx package ABI: 7bd58ac0260d94489d85c3bf04ad40ab93452fa8546255c24ec467e9779ece4b
-Installing 9/10 draco:arm64-osx@1.5.6#1...
-Building draco:arm64-osx@1.5.6#1...
-warning: -- Using community triplet arm64-osx. This triplet configuration is not guaranteed to succeed.
--- [COMMUNITY] Loading triplet configuration from: /Users/denglang/.vcpkg-clion/vcpkg/triplets/community/arm64-osx.cmake
--- Installing port from location: /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/versioning_/versions/draco/7766920ec32ef9da00121a0668edf41bf9d1d76b
--- Downloading https://github.com/google/draco/archive/1.5.6.tar.gz -> google-draco-1.5.6.tar.gz...
--- Extracting source /Users/denglang/.vcpkg-clion/vcpkg/downloads/google-draco-1.5.6.tar.gz
--- Applying patch fix-compile-error-uwp.patch
--- Applying patch fix-uwperror.patch
--- Applying patch fix-pkgconfig.patch
--- Applying patch disable-symlinks.patch
--- Applying patch install-linkage.diff
--- Using source at /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/draco/src/1.5.6-926d44e53b.clean
--- Found external ninja('1.10.2').
--- Configuring arm64-osx
--- Building arm64-osx-dbg
--- Building arm64-osx-rel
--- Fixing pkgconfig file: /Users/denglang/.vcpkg-clion/vcpkg/packages/draco_arm64-osx/lib/pkgconfig/draco.pc
--- Fixing pkgconfig file: /Users/denglang/.vcpkg-clion/vcpkg/packages/draco_arm64-osx/debug/lib/pkgconfig/draco.pc
--- Installing: /Users/denglang/.vcpkg-clion/vcpkg/packages/draco_arm64-osx/share/draco/copyright
--- Performing post-build validation
-Stored binaries in 1 destinations in 1.6 s.
-Elapsed time to handle draco:arm64-osx: 33 s
-draco:arm64-osx package ABI: dc1234382a464e0d18ec64da276f855e81c304e8785ce0e1ebe4f0fd54655196
-Installing 10/10 assimp:arm64-osx@5.3.1#3...
-Building assimp:arm64-osx@5.3.1#3...
-warning: -- Using community triplet arm64-osx. This triplet configuration is not guaranteed to succeed.
--- [COMMUNITY] Loading triplet configuration from: /Users/denglang/.vcpkg-clion/vcpkg/triplets/community/arm64-osx.cmake
--- Installing port from location: /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/versioning_/versions/assimp/76ae4b01818ee27c5beac4d0b18cb566f94f27ec
--- Downloading https://github.com/assimp/assimp/archive/v5.3.1.tar.gz -> assimp-assimp-v5.3.1.tar.gz...
--- Extracting source /Users/denglang/.vcpkg-clion/vcpkg/downloads/assimp-assimp-v5.3.1.tar.gz
--- Applying patch build_fixes.patch
--- Using source at /Users/denglang/.vcpkg-clion/vcpkg/buildtrees/assimp/src/v5.3.1-c1ad782f20.clean
--- Found external ninja('1.10.2').
--- Configuring arm64-osx
--- Building arm64-osx-dbg
--- Building arm64-osx-rel
--- Fixing pkgconfig file: /Users/denglang/.vcpkg-clion/vcpkg/packages/assimp_arm64-osx/lib/pkgconfig/assimp.pc
--- Fixing pkgconfig file: /Users/denglang/.vcpkg-clion/vcpkg/packages/assimp_arm64-osx/debug/lib/pkgconfig/assimp.pc
--- Installing: /Users/denglang/.vcpkg-clion/vcpkg/packages/assimp_arm64-osx/share/assimp/copyright
--- Performing post-build validation
-Stored binaries in 1 destinations in 5.7 s.
-Elapsed time to handle assimp:arm64-osx: 54 s
-assimp:arm64-osx package ABI: 2d76859814d1c48533c0088d6096082a5e9eecc0f461e0674b0f5a7c4113a64e
-Total install time: 2 min
+All requested packages are currently installed.
+Total install time: 167 ns
 assimp provides CMake targets:
 
   # this is heuristically generated, and may not be correct
@@ -287,6 +79,21 @@ tinygltf is header-only and can be used from CMake via:
     target_include_directories(main PRIVATE ${TINYGLTF_INCLUDE_DIRS})
 
 -- Running vcpkg install - done
--- Configuring done (122.7s)
+CMake Deprecation Warning at cmake-build-debug/vcpkg_installed/arm64-osx/share/rapidjson/RapidJSONConfig.cmake:3 (cmake_minimum_required):
+  Compatibility with CMake < 3.5 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+Call Stack (most recent call first):
+  /Users/denglang/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake:859 (_find_package)
+  /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/share/cmake-3.27/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)
+  cmake-build-debug/vcpkg_installed/arm64-osx/share/assimp/assimpConfig.cmake:36 (find_dependency)
+  /Users/denglang/.vcpkg-clion/vcpkg/scripts/buildsystems/vcpkg.cmake:859 (_find_package)
+  CMakeLists.txt:15 (find_package)
+
+
+-- RapidJSON found. Headers: /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug/vcpkg_installed/arm64-osx/share/rapidjson/../../include
+-- Configuring done (5.0s)
 -- Generating done (0.0s)
 -- Build files have been written to: /Users/denglang/workspace/CppProj/learn_opengl/cmake-build-debug

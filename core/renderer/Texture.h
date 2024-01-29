@@ -54,6 +54,8 @@ public:
             glGenerateMipmap(GL_TEXTURE_2D);
 
             FreeImage_Unload(imageBitmap);
+        } else {
+            std::cout << url << " :load error" << std::endl;
         }
 
         FreeImage_DeInitialise();

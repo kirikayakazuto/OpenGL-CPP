@@ -47,7 +47,7 @@ public:
             glUniform1i(texUni, item.second->unit);
             item.second->Bind();
         }
-
+        
         for (const auto &item: this->matMap) {
             auto uni = glGetUniformLocation(this->shader->ID, item.first.c_str());
             glUniformMatrix4fv(uni, 1, GL_FALSE, item.second);

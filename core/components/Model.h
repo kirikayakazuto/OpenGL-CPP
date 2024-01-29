@@ -6,7 +6,7 @@
 #define LEARN_OPENGL_MODEL_H
 
 #include "./MeshRenderer.h"
-#include "../materials/SingleMaterial.h"
+#include "../materials/PBRMaterial.h"
 #include <assimp/Importer.hpp>
 #include <assimp/scene.h>
 #include <assimp/postprocess.h>
@@ -31,20 +31,18 @@ private:
     void ProcessNode(aiNode* node, const aiScene* scene) {
         for (int i = 0; i < node->mNumMeshes; ++i) {
             auto mesh = scene->mMeshes[node->mMeshes[i]];
-            this->meshes.push_back(this->ProcessMesh(mesh, scene));
-            this->materials.push_back(SingleMaterial());
+            this->ProcessMesh(mesh, scene);
         }
         for (int i = 0; i < node->mNumChildren; ++i) {
             this->ProcessNode(node->mChildren[i], scene);
         }
     }
 
-    Mesh ProcessMesh(aiMesh* mesh, const aiScene* scene) {
+    void ProcessMesh(aiMesh* mesh, const aiScene* scene) {
         std::vector<Vertex> vertices;
         std::vector<GLuint> indices;
         for (int i = 0; i < mesh->mNumVertices; ++i) {
-            std::cout << i << std::endl;
-            Vertex vertex;
+            Vertex vertex{};
             glm::vec3 position;
             position.x = mesh->mVertices[i].x;
             position.y = mesh->mVertices[i].y;
@@ -83,7 +81,6 @@ private:
                 indices.push_back(face.mIndices[j]);
             }
         }
-        std::cout << "process mesh end" << std::endl;
         std::vector<AttributeFormat> attribute = {
                 { "a_position", 3 },
                 {"a_normal", 3},
@@ -93,33 +90,58 @@ private:
         };
 
         auto m = scene->mMaterials[mesh->mMaterialIndex];
-        this->LoadTextures(m, aiTextureType_DIFFUSE);
-        return Mesh(attribute, vertices, indices);
+        std::unordered_map<std::string, std::vector<std::string>> textureMap;
+
+        auto diffuseTextures = this->LoadTextures(m, aiTextureType_DIFFUSE);
+        textureMap.insert(std::pair<std::string, std::vector<std::string>>("texture_diffuse", diffuseTextures));
+
+//        auto specularTextures = this->LoadTextures(m, aiTextureType_SPECULAR);
+//        textureMap.insert(std::pair<std::string, std::vector<std::string>>("texture_specular", specularTextures));
+//
+//        auto heightTextures = this->LoadTextures(m, aiTextureType_HEIGHT);
+//        textureMap.insert(std::pair<std::string, std::vector<std::string>>("texture_normal", heightTextures));
+//
+//        auto ambientTextures = this->LoadTextures(m, aiTextureType_AMBIENT);
+//        textureMap.insert(std::pair<std::string, std::vector<std::string>>("texture_height", ambientTextures));
+
+        this->meshes.emplace_back(attribute, vertices, indices);
+        this->materials.push_back(PBRMaterial(textureMap));
     }
 
-    void LoadTextures(aiMaterial* aiMaterial, aiTextureType type) {
-        std::vector<Texture> textures;
-        for(unsigned int i = 0; i < aiMaterial->GetTextureCount(type); i++)
-        {
+    std::vector<std::string> LoadTextures(aiMaterial* aiMaterial, aiTextureType type) {
+        std::vector<std::string> textures;
+        for(unsigned int i = 0; i < aiMaterial->GetTextureCount(type); i++) {
             aiString str;
             aiMaterial->GetTexture(type, i, &str);
-            // check if texture was loaded before and if so, continue to next iteration: skip loading a new texture
-            bool skip = false;
-            for(unsigned int j = 0; j < textures_loaded.size(); j++) {
-                if(std::strcmp(textures_loaded[j].url.data(), str.C_Str()) == 0) {
-                    textures.push_back(textures_loaded[j]);
-                    skip = true; // a texture with the same filepath has already been loaded, continue to next one. (optimization)
-                    break;
-                }
-            }
-            if(!skip) {   // if texture hasn't been loaded already, load it
-                Texture texture("", 0);
-                textures.push_back(texture);
-                textures_loaded.push_back(texture);  // store it as texture loaded for entire model, to ensure we won't unnecessary load duplicate textures.
-            }
+            // std::cout << str.C_Str() << std::endl;
+            textures.emplace_back(str.C_Str());
         }
         return textures;
     }
+
+//    void LoadTextures(aiMaterial* aiMaterial, aiTextureType type) {
+//        std::vector<Texture> textures;
+//        for(unsigned int i = 0; i < aiMaterial->GetTextureCount(type); i++)
+//        {
+//            aiString str;
+//            aiMaterial->GetTexture(type, i, &str);
+//            // check if texture was loaded before and if so, continue to next iteration: skip loading a new texture
+//            bool skip = false;
+//            for(unsigned int j = 0; j < textures_loaded.size(); j++) {
+//                if(std::strcmp(textures_loaded[j].url.data(), str.C_Str()) == 0) {
+//                    textures.push_back(textures_loaded[j]);
+//                    skip = true; // a texture with the same filepath has already been loaded, continue to next one. (optimization)
+//                    break;
+//                }
+//            }
+//            if(!skip) {   // if texture hasn't been loaded already, load it
+//                Texture texture("", 0);
+//                textures.push_back(texture);
+//                textures_loaded.push_back(texture);  // store it as texture loaded for entire model, to ensure we won't unnecessary load duplicate textures.
+//            }
+//        }
+//        return textures;
+//    }
 public:
 
     std::unordered_map<std::string, Texture*> textures;

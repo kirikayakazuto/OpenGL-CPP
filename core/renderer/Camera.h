@@ -98,10 +98,15 @@ public:
                 return;
             }
 
-            auto newToward = glm::rotate(this->toward, glm::radians((float)dx), this->up);
+//            auto newToward = glm::rotate(this->toward, glm::radians((float)dx), this->up);
+//            auto right = glm::normalize(glm::cross(newToward, this->up));
+//            auto newUp = glm::rotate(this->up, glm::radians((float)dy), right);
+//            newToward = glm::rotate(newToward, glm::radians((float)dy), right);
+
+            auto newToward = glm::rotate(this->toward, glm::radians((float)dx), glm::vec3(0, 1, 0));
             auto right = glm::normalize(glm::cross(newToward, this->up));
-            auto newUp = glm::rotate(this->up, glm::radians((float)dy), right);
-            newToward = glm::rotate(newToward, glm::radians((float)dy), right);
+            auto newUp = glm::rotate(this->up, glm::radians((float)dy), glm::vec3(1, 0, 0));
+             newToward = glm::rotate(newToward, glm::radians((float)dy), glm::vec3(1, 0, 0));
 
             this->toward = newToward;
             this->up = newUp;

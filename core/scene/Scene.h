@@ -8,10 +8,12 @@
 #include "Node.h"
 #include "../renderer/Camera.h"
 #include "../components/Plane.h"
+#include "../components/Cube.h"
 #include "../components/MeshRenderer.h"
 #include "../materials/TextureMaterial.h"
 #include <stack>
 #include "../components/Model.h"
+#include "../renderer/Light.h"
 
 class Scene {
 private:
@@ -35,16 +37,25 @@ private:
 public:
     Node* root{};
     Camera* camera;
+    Light* light;
+
 
     Scene(int width, int height, GLFWwindow* window) {
         this->window = window;
         this->camera = new Camera(width, height, glm::vec3(0.0f, 0.0f, 2.0f), 45.0f, 0.1f, 100.0f);
+        this->light = new Light(glm::vec3(3.0f, 3.0f, -10.0f), glm::vec3(1.0f, 1.0f, 1.0f));
+
 
         this->root = new Node("Root");
-
         this->root->SetPosition(glm::vec3(1, 0, 0));
         this->root->SetScale(glm::vec3(1, 1, 1));
         this->root->SetRotation(glm::vec3(0, 0, 0));
+
+        auto lightCube = new Node("CubeLight");
+        lightCube->AddComponent<Cube>();
+        lightCube->SetPosition(this->light->position);
+
+        this->root->AddChild(lightCube);
 
         auto leftSprite = new Node("Sprite");
         auto plane2 = leftSprite->AddComponent<Plane>();
@@ -63,7 +74,7 @@ public:
 
         auto m = new Node("Model");
         auto com = m->AddComponent<Model>();
-        m->SetPosition(glm::vec3(0, 0, 0));
+        m->SetPosition(glm::vec3(0, -8, -20));
         this->root->AddChild(m);
     }
 
@@ -71,9 +82,9 @@ public:
         glEnable(GL_DEPTH_TEST);
         glDepthFunc(GL_LESS);
 
-        glEnable(GL_CULL_FACE);
-        glCullFace(GL_BACK);
-        glFrontFace(GL_CCW);
+//        glEnable(GL_CULL_FACE);
+//        glCullFace(GL_BACK);
+//        glFrontFace(GL_CCW);
 
         for (const auto &item: nodes) {
             auto meshRenderer = item->GetComponent<MeshRenderer>();
@@ -82,8 +93,13 @@ public:
                 auto mesh = meshRenderer->meshes[i];
                 auto material = meshRenderer->materials[i];
                 glBindVertexArray(mesh.GetVaoId());
-                material.SetUniformMat("u_worldMatrix", glm::value_ptr(item->worldMatrix));
-                material.SetUniformMat("u_cameraMatrix", glm::value_ptr(this->camera->projection * this->camera->view));
+                material.SetUniform("u_worldMatrix", item->worldMatrix);
+                material.SetUniform("u_cameraMatrix", this->camera->projection * this->camera->view);
+                material.SetUniform("camera.position", this->camera->position);
+                material.SetUniform("light.position", this->light->position);
+                material.SetUniform("light.color", this->light->color);
+                material.SetUniform("light.shininess", 1.0f);
+
                 material.Activate();
                 glDrawElements(GL_TRIANGLES, (GLsizei)mesh.indices.size(), GL_UNSIGNED_INT, 0);
             }

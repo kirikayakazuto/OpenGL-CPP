@@ -18,8 +18,8 @@ public:
             for(int i=0; i<item.second.size(); i++) {
                 auto key = item.first + std::to_string(i);
                 auto url = "assets/models/man/" + item.second[i];
-                std::cout << "texture name: " << key << " : " << url << index << std::endl;
-                this->SetTexture(key, new Texture(url, index++));
+                // std::cout << "texture name: " << key << " : " << url << index << std::endl;
+                this->SetUniform(key, new Texture(url, index++));
             }
         }
     }

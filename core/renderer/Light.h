@@ -18,6 +18,12 @@ public:
     LightType type = Direction;
     glm::vec3 position;
     glm::vec3 direction;
+    glm::vec3 color;
+
+    Light(glm::vec3 position, glm::vec3 color): position(position), color(color) {
+
+    }
+
 };
 
 #endif //LEARN_OPENGL_LIGHT_H

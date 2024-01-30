@@ -18,6 +18,7 @@ find_path(TINYGLTF_INCLUDE_DIRS "tiny_gltf.h")
 include_directories(${CMAKE_PROJECT_NAME} PRIVATE ${TINYGLTF_INCLUDE_DIRS})
 
 file(GLOB_RECURSE SOURCE_FILES main.cpp "core/*.h")
-add_executable(${CMAKE_PROJECT_NAME} ${SOURCE_FILES})
+add_executable(${CMAKE_PROJECT_NAME} ${SOURCE_FILES}
+        core/components/Cube.h)
 
 target_link_libraries(${CMAKE_PROJECT_NAME} freeimage::FreeImage freeimage::FreeImagePlus glm::glm glfw glad::glad nlohmann_json::nlohmann_json nanovg::nanovg assimp::assimp ${OPENGL_LIBRARY})

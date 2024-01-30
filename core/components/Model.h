@@ -85,8 +85,6 @@ private:
                 { "a_position", 3 },
                 {"a_normal", 3},
                 {"a_uv", 2},
-                {"a_tangent", 3},
-                {"a_bitangent", 3}
         };
 
         auto m = scene->mMaterials[mesh->mMaterialIndex];
@@ -95,20 +93,20 @@ private:
         auto diffuseTextures = this->LoadTextures(m, aiTextureType_DIFFUSE);
         textureMap.insert(std::pair<std::string, std::vector<std::string>>("texture_diffuse", diffuseTextures));
 
-//        auto specularTextures = this->LoadTextures(m, aiTextureType_SPECULAR);
-//        textureMap.insert(std::pair<std::string, std::vector<std::string>>("texture_specular", specularTextures));
-//
-//        auto heightTextures = this->LoadTextures(m, aiTextureType_HEIGHT);
-//        textureMap.insert(std::pair<std::string, std::vector<std::string>>("texture_normal", heightTextures));
-//
-//        auto ambientTextures = this->LoadTextures(m, aiTextureType_AMBIENT);
-//        textureMap.insert(std::pair<std::string, std::vector<std::string>>("texture_height", ambientTextures));
+        auto specularTextures = this->LoadTextures(m, aiTextureType_SPECULAR);
+        textureMap.insert(std::pair<std::string, std::vector<std::string>>("texture_specular", specularTextures));
+
+        auto heightTextures = this->LoadTextures(m, aiTextureType_HEIGHT);
+        textureMap.insert(std::pair<std::string, std::vector<std::string>>("texture_normal", heightTextures));
+
+        auto ambientTextures = this->LoadTextures(m, aiTextureType_AMBIENT);
+        textureMap.insert(std::pair<std::string, std::vector<std::string>>("texture_height", ambientTextures));
 
         this->meshes.emplace_back(attribute, vertices, indices);
         this->materials.push_back(PBRMaterial(textureMap));
     }
 
-    std::vector<std::string> LoadTextures(aiMaterial* aiMaterial, aiTextureType type) {
+    static std::vector<std::string> LoadTextures(aiMaterial* aiMaterial, aiTextureType type) {
         std::vector<std::string> textures;
         for(unsigned int i = 0; i < aiMaterial->GetTextureCount(type); i++) {
             aiString str;

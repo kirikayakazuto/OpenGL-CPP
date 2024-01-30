@@ -19,7 +19,7 @@ public:
         url(url) {
 
         this->mainTexture = new Texture(url, 0);
-        this->SetTexture("mainTexture", this->mainTexture);
+        this->SetUniform("mainTexture", this->mainTexture);
     }
 
 };

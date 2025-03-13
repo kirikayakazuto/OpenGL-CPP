@@ -90,16 +90,16 @@ private:
         auto m = scene->mMaterials[mesh->mMaterialIndex];
         std::unordered_map<std::string, std::vector<std::string>> textureMap;
 
-        auto diffuseTextures = this->LoadTextures(m, aiTextureType_DIFFUSE);
+        auto diffuseTextures = Model::LoadTextures(m, aiTextureType_DIFFUSE);
         textureMap.insert(std::pair<std::string, std::vector<std::string>>("texture_diffuse", diffuseTextures));
 
-        auto specularTextures = this->LoadTextures(m, aiTextureType_SPECULAR);
+        auto specularTextures = Model::LoadTextures(m, aiTextureType_SPECULAR);
         textureMap.insert(std::pair<std::string, std::vector<std::string>>("texture_specular", specularTextures));
 
-        auto heightTextures = this->LoadTextures(m, aiTextureType_HEIGHT);
+        auto heightTextures = Model::LoadTextures(m, aiTextureType_HEIGHT);
         textureMap.insert(std::pair<std::string, std::vector<std::string>>("texture_normal", heightTextures));
 
-        auto ambientTextures = this->LoadTextures(m, aiTextureType_AMBIENT);
+        auto ambientTextures = Model::LoadTextures(m, aiTextureType_AMBIENT);
         textureMap.insert(std::pair<std::string, std::vector<std::string>>("texture_height", ambientTextures));
 
         this->meshes.emplace_back(attribute, vertices, indices);
@@ -111,7 +111,6 @@ private:
         for(unsigned int i = 0; i < aiMaterial->GetTextureCount(type); i++) {
             aiString str;
             aiMaterial->GetTexture(type, i, &str);
-            // std::cout << str.C_Str() << std::endl;
             textures.emplace_back(str.C_Str());
         }
         return textures;
@@ -145,7 +144,7 @@ public:
     std::unordered_map<std::string, Texture*> textures;
 
     Model(): MeshRenderer() {
-        std::string url = "assets/models/man/nanosuit.obj";
+        const std::string url = "assets/models/man/nanosuit.obj";
         this->fileUrl = url;
         this->directory = url.substr(0, url.find_last_of('/'));
         std::vector<AttributeFormat> attribute = {

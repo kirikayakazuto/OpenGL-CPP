@@ -5,8 +5,8 @@
 #ifndef LEARN_OPENGL_NODE_H
 #define LEARN_OPENGL_NODE_H
 
-#include <iostream>
 #include <vector>
+#include <algorithm>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include "../components/Component.h"
@@ -35,12 +35,12 @@ public:
     Node(std::string nodeName): nodeName(std::move(nodeName)) {
 
     }
+
     // 添加子节点
     Node* AddChild(Node* node) {
         if(node->parent != nullptr) {
             auto local_children = node->parent->children;
-            auto it = std::find(local_children.begin(), local_children.end(), node);
-            if (it != local_children.end()) {
+            if (const auto it = std::find(local_children.begin(), local_children.end(), node); it != local_children.end()) {
                 local_children.erase(it);
             }
         }
@@ -54,7 +54,7 @@ public:
         return node;
     }
     // 获取子节点
-    Node* GetChild(const std::string& key) {
+    Node* GetChild(const std::string& key) const {
         for (const auto &item: this->children) {
             if (item->nodeName == key) {
                 return item;
@@ -63,15 +63,15 @@ public:
         return nullptr;
     }
     // 获取子节点
-    Node* GetChild(int index) {
+    Node* GetChild(int index) const {
         return this->children[index];
     }
 
-    glm::vec3 GetPosition() {
+    glm::vec3 GetPosition() const {
         return this->position;
     }
 
-    glm::vec3 GetScale() {
+    glm::vec3 GetScale() const {
         return this->scale;
     }
 
@@ -100,7 +100,7 @@ public:
 
     template <class T_Component>
     T_Component* AddComponent() {
-        static_assert(std::is_base_of<Component, T_Component>::value, "T must bt subclass of Component");
+        static_assert(std::is_base_of_v<Component, T_Component>, "T must bt subclass of Component");
         auto com = new T_Component();
         this->components.push_back(com);
         return com;
@@ -108,11 +108,10 @@ public:
 
     template <class T_Component>
     T_Component* GetComponent() {
-        static_assert(std::is_base_of<Component, T_Component>::value, "T must be a subclass of Component");
+        static_assert(std::is_base_of_v<Component, T_Component>, "T must be a subclass of Component");
         for (auto &item : this->components) {
-            if (std::is_base_of<MeshRenderer, T_Component>::value) {
-                auto component = dynamic_cast<T_Component*>(item);
-                if (component) {
+            if (std::is_base_of_v<MeshRenderer, T_Component>) {
+                if (auto component = dynamic_cast<T_Component*>(item)) {
                     return component;
                 }
             }

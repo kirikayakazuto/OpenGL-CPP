@@ -5,18 +5,17 @@
 #ifndef LEARN_OPENGL_CAMERA_H
 #define LEARN_OPENGL_CAMERA_H
 
-#include <iostream>
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
 #include <glm/gtx/rotate_vector.hpp>
-#include <glm/gtx/vector_angle.hpp>
 
 class Camera {
+
 private:
     double mouseX{};
     double mouseY{};
+
 public:
     //
     glm::vec3 position{};
@@ -35,11 +34,12 @@ public:
     float nearPlane;
     // 远平面
     float farPlane;
-
+    // 移动速度
     float speed = 0.02;
+    //
     bool touched = false;
 
-    Camera(int width, int height, glm::vec3 position, float fov, float near, float far) {
+    Camera(const int width, const int height, const glm::vec3 position, const float fov, const float near, const float far) {
         this->width = width;
         this->height = height;
         this->position = position;
@@ -53,7 +53,7 @@ public:
         this->projection = glm::mat4(1.0f);
 
         this->view = glm::lookAt(this->position, this->position + this->toward, this->up);
-        this->projection = glm::perspective(glm::radians(this->fov), (float)(this->width) / (float)this->height, nearPlane, farPlane);
+        this->projection = glm::perspective(glm::radians(this->fov), static_cast<float>(this->width) / static_cast<float>(this->height), nearPlane, farPlane);
     }
 
     void OnInput(GLFWwindow* window) {
@@ -86,9 +86,9 @@ public:
             double currMouseY;
             glfwGetCursorPos(window, &currMouseX, &currMouseY);
 
-            float rotateSpeed = 0.1;
-            auto dx = (this->mouseX - currMouseX) * rotateSpeed;
-            auto dy = (this->mouseY - currMouseY) * rotateSpeed;
+            constexpr float rotateSpeed = 0.1;
+            const auto dx = (this->mouseX - currMouseX) * rotateSpeed;
+            const auto dy = (this->mouseY - currMouseY) * rotateSpeed;
 
             this->mouseX = currMouseX;
             this->mouseY = currMouseY;
@@ -103,10 +103,10 @@ public:
 //            auto newUp = glm::rotate(this->up, glm::radians((float)dy), right);
 //            newToward = glm::rotate(newToward, glm::radians((float)dy), right);
 
-            auto newToward = glm::rotate(this->toward, glm::radians((float)dx), glm::vec3(0, 1, 0));
+            auto newToward = glm::rotate(this->toward, glm::radians(static_cast<float>(dx)), glm::vec3(0, 1, 0));
             auto right = glm::normalize(glm::cross(newToward, this->up));
-            auto newUp = glm::rotate(this->up, glm::radians((float)dy), glm::vec3(1, 0, 0));
-             newToward = glm::rotate(newToward, glm::radians((float)dy), glm::vec3(1, 0, 0));
+            auto newUp = glm::rotate(this->up, glm::radians(static_cast<float>(dy)), glm::vec3(1, 0, 0));
+             newToward = glm::rotate(newToward, glm::radians(static_cast<float>(dy)), glm::vec3(1, 0, 0));
 
             this->toward = newToward;
             this->up = newUp;

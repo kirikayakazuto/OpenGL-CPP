@@ -9,7 +9,8 @@
 #include "../materials/TextureMaterial.h"
 
 
-class Plane: public MeshRenderer{
+class Plane final : public MeshRenderer {
+
 public:
     Plane(): MeshRenderer() {
         std::vector<AttributeFormat> attribute = {
@@ -30,12 +31,12 @@ public:
         this->meshes.emplace_back(attribute, vertices, indices);
     }
 
-    void SetMaterial(TextureMaterial m) {
+    void SetMaterial(const TextureMaterial &m) {
         this->materials.push_back(m);
     }
 
     void OnStart() override {
-        std::cout << "call Plane on start" << std::endl;
+        std::cout << "call Plane OnStart" << std::endl;
     }
 };
 

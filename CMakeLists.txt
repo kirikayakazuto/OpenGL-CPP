@@ -3,6 +3,10 @@ project(learn_opengl)
 
 set(CMAKE_CXX_STANDARD 17)
 
+if(CMAKE_TOOLCHAIN_FILE)
+    include(${CMAKE_TOOLCHAIN_FILE})
+endif()
+
 add_definitions(-DGLFW_INCLUDE_NONE)
 
 find_package(OpenGL REQUIRED)

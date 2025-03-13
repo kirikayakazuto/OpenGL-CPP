@@ -10,6 +10,7 @@ private:
     bool inited = false;
 
 public:
+    virtual ~Component() = default;
 
     void OnInit() {
         if(this->inited) return;

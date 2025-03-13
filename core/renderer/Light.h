@@ -13,14 +13,16 @@ enum LightType {
 };
 
 class Light {
+
 private:
+
 public:
-    LightType type = Direction;
+    LightType type = Point;
     glm::vec3 position;
     glm::vec3 direction;
     glm::vec3 color;
 
-    Light(glm::vec3 position, glm::vec3 color): position(position), color(color) {
+    Light(const glm::vec3 position, const glm::vec3 color): position(position), color(color) {
 
     }
 

@@ -8,7 +8,6 @@
 // #define STB_IMAGE_IMPLEMENTATION // 只需在一个源文件中定义这个宏
 #include <glad/glad.h>
 #include <FreeImage.h>
-#include <FreeImagePlus.h>
 #include <iostream>
 
 
@@ -49,8 +48,8 @@ public:
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
-            GLenum format = FreeImage_GetBPP(imageBitmap) == 32 ? GL_RGBA : GL_RGB;
-            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, widthImg, heightImg, 0, GL_BGRA, GL_UNSIGNED_BYTE, (void*)bytes);
+            const auto format = FreeImage_GetBPP(imageBitmap) == 32 ? GL_RGBA : GL_RGB;
+            glTexImage2D(GL_TEXTURE_2D, 0, format, widthImg, heightImg, 0, format == GL_RGBA ? GL_BGRA : GL_BGR, GL_UNSIGNED_BYTE, (void*)bytes);
             glGenerateMipmap(GL_TEXTURE_2D);
 
             FreeImage_Unload(imageBitmap);

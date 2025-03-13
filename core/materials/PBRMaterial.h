@@ -12,13 +12,12 @@ class PBRMaterial : public Material {
 private:
 
 public:
-    PBRMaterial(std::unordered_map<std::string, std::vector<std::string>>& textureMap): Material(new Shader("core/materials/shaders/pbr.vert","core/materials/shaders/pbr.frag")) {
+    PBRMaterial(const std::unordered_map<std::string, std::vector<std::string>>& textureMap): Material(new Shader("core/materials/shaders/pbr.vert","core/materials/shaders/pbr.frag")) {
         int index = 0;
         for (const auto &item: textureMap) {
             for(int i=0; i<item.second.size(); i++) {
                 auto key = item.first + std::to_string(i);
                 auto url = "assets/models/man/" + item.second[i];
-                // std::cout << "texture name: " << key << " : " << url << index << std::endl;
                 this->SetUniform(key, new Texture(url, index++));
             }
         }

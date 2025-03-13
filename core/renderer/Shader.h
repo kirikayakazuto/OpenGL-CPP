@@ -5,15 +5,15 @@
 #ifndef LEARN_OPENGL_SHADER_H
 #define LEARN_OPENGL_SHADER_H
 
+#include <filesystem>
 #include <glad/glad.h>
 #include <string>
 #include <fstream>
-#include <sstream>
 #include <iostream>
 
 class Shader {
 private:
-    std::string GetFileContent(const char* filename) {
+    static std::string GetFileContent(const char* filename) {
         std::ifstream in(filename, std::ios::binary);
         if (in) {
             std::string contents;
@@ -26,7 +26,8 @@ private:
         }
         throw(errno);
     }
-    void CompileShader(unsigned int shader, const char* type) {
+
+    static void CompileShader(unsigned int shader, const char* type) {
         GLint hasCompiled;
         char infoLog[1024];
 
@@ -36,7 +37,8 @@ private:
             std::cout << "SHADER_COMPILATION_ERROR for:" << type << "\n" << infoLog << std::endl;
         }
     }
-    void CompileProgram(unsigned int program) {
+
+    static void CompileProgram(unsigned int program) {
         GLint hasCompiled;
         char infoLog[1024];
 
@@ -50,18 +52,18 @@ public:
     GLuint ID;
 
     Shader(const char* vertexFile, const char* fragmentFile) {
-        auto vertStr = this->GetFileContent(vertexFile);
-        auto fragStr = this->GetFileContent(fragmentFile);
+        const auto vertStr = this->GetFileContent(vertexFile);
+        const auto fragStr = this->GetFileContent(fragmentFile);
 
-        auto vertSource = vertStr.c_str();
-        auto fragSource = fragStr.c_str();
+        const auto vertSource = vertStr.c_str();
+        const auto fragSource = fragStr.c_str();
 
-        auto vertShader = glCreateShader(GL_VERTEX_SHADER);
+        const auto vertShader = glCreateShader(GL_VERTEX_SHADER);
         glShaderSource(vertShader, 1, &vertSource, nullptr);
         glCompileShader(vertShader);
         this->CompileShader(vertShader, "VERTEX");
 
-        auto fragShader = glCreateShader(GL_FRAGMENT_SHADER);
+        const auto fragShader = glCreateShader(GL_FRAGMENT_SHADER);
         glShaderSource(fragShader, 1, &fragSource, nullptr);
         glCompileShader(fragShader);
         this->CompileShader(fragShader, "FRAGMENT");
@@ -76,11 +78,11 @@ public:
         glDeleteShader(fragShader);
     }
 
-    void Activate() {
+    void Activate() const {
         glUseProgram(this->ID);
     }
 
-    void Delete() {
+    void Delete() const {
         glDeleteProgram(this->ID);
     }
 };

@@ -16,6 +16,7 @@
 #include "../renderer/Light.h"
 
 class Scene {
+
 private:
     GLFWwindow* window;
     std::vector<Node*> nodes;
@@ -39,43 +40,43 @@ public:
     Camera* camera;
     Light* light;
 
-
-    Scene(int width, int height, GLFWwindow* window) {
+    Scene(const int width, const int height, GLFWwindow* window) {
         this->window = window;
         this->camera = new Camera(width, height, glm::vec3(0.0f, 0.0f, 2.0f), 45.0f, 0.1f, 100.0f);
         this->light = new Light(glm::vec3(3.0f, 3.0f, -10.0f), glm::vec3(1.0f, 1.0f, 1.0f));
-
 
         this->root = new Node("Root");
         this->root->SetPosition(glm::vec3(1, 0, 0));
         this->root->SetScale(glm::vec3(1, 1, 1));
         this->root->SetRotation(glm::vec3(0, 0, 0));
 
-        auto lightCube = new Node("CubeLight");
+        const auto lightCube = new Node("CubeLight");
         lightCube->AddComponent<Cube>();
         lightCube->SetPosition(this->light->position);
 
         this->root->AddChild(lightCube);
 
-        auto leftSprite = new Node("Sprite");
-        auto plane2 = leftSprite->AddComponent<Plane>();
+        const auto leftSprite = new Node("Sprite");
+        const auto plane2 = leftSprite->AddComponent<Plane>();
         plane2->SetMaterial(TextureMaterial("assets/pop_cat.png"));
         leftSprite->SetPosition(glm::vec3(-1, 0, 0));
-        leftSprite->SetScale(glm::vec3(2, 1, 1));
+        leftSprite->SetScale(glm::vec3(1, 1, 1));
+        leftSprite->SetRotation(glm::vec3(0, 0, 0));
 
-        auto rightSprite = new Node("Sprite");
-        auto plane3 = rightSprite->AddComponent<Plane>();
+        const auto rightSprite = new Node("Sprite");
+        const auto plane3 = rightSprite->AddComponent<Plane>();
         plane3->SetMaterial(TextureMaterial("assets/tt.png"));
         rightSprite->SetPosition(glm::vec3(1, 0, 0));
-        rightSprite->SetRotation(glm::vec3(0, 45, 0));
+        rightSprite->SetScale(glm::vec3(1, 1, 1));
+        rightSprite->SetRotation(glm::vec3(0, 0, 0));
 
         this->root->AddChild(rightSprite);
         this->root->AddChild(leftSprite);
 
-        auto m = new Node("Model");
-        auto com = m->AddComponent<Model>();
-        m->SetPosition(glm::vec3(0, -8, -20));
-        this->root->AddChild(m);
+        const auto model = new Node("Model");
+        auto com = model->AddComponent<Model>();
+        model->SetPosition(glm::vec3(0, -8, -20));
+        this->root->AddChild(model);
     }
 
     void Draw() const {
@@ -87,7 +88,7 @@ public:
 //        glFrontFace(GL_CCW);
 
         for (const auto &item: nodes) {
-            auto meshRenderer = item->GetComponent<MeshRenderer>();
+            const auto meshRenderer = item->GetComponent<MeshRenderer>();
             if(!meshRenderer) continue;
             for(int i=0; i<meshRenderer->meshes.size(); i++) {
                 auto mesh = meshRenderer->meshes[i];
@@ -101,7 +102,7 @@ public:
                 material.SetUniform("light.shininess", 1.0f);
 
                 material.Activate();
-                glDrawElements(GL_TRIANGLES, (GLsizei)mesh.indices.size(), GL_UNSIGNED_INT, 0);
+                glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(mesh.indices.size()), GL_UNSIGNED_INT, 0);
             }
         }
     }

@@ -12,6 +12,7 @@
 
 
 class MeshRenderer: public Component {
+
 public:
     std::vector<Mesh> meshes;
     std::vector<Material> materials;
